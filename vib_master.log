@@ -10163,3 +10163,29 @@ AttributeError: 'RandomForestClassifier' object has no attribute 'partial_fit'
 2025-03-26 11:08:23,604 [INFO] Loaded orderbook data: 49850 rows.
 2025-03-26 11:08:23,707 [INFO] [ML] Prediction: 1
 2025-03-26 11:08:54,956 [INFO] Loaded trades data: 16133 rows.
+2025-03-26 14:12:12,535 [INFO] Database initialized (tables predictions and feedback ensured).
+2025-03-26 14:12:13,024 [INFO] Model loaded successfully.
+2025-03-26 14:12:13,038 [INFO] Loaded trades data: 16133 rows.
+2025-03-26 14:12:14,809 [INFO] Loaded extras data: 1554400 rows.
+2025-03-26 14:12:14,833 [INFO] Loaded orderbook data: 49850 rows.
+2025-03-26 14:12:14,940 [INFO] [ML] Prediction: 1
+2025-03-26 14:12:46,284 [INFO] [ML] Prediction: 1
+2025-03-26 14:13:17,744 [INFO] [ML] Prediction: 1
+/Users/igorbulgakov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2025-03-26 14:24:03,570 [INFO] Database initialized (tables predictions and feedback ensured).
+2025-03-26 14:24:03,570 [INFO] Database initialized (tables predictions and feedback ensured).
+2025-03-26 14:24:04,087 [INFO] Model loaded successfully.
+2025-03-26 14:24:04,087 [INFO] Model loaded successfully.
+2025-03-26 14:24:04,103 [INFO] Loaded trades data: 16133 rows.
+2025-03-26 14:24:04,103 [INFO] Loaded trades data: 16133 rows.
+2025-03-26 14:24:05,901 [INFO] Loaded extras data: 1554400 rows.
+2025-03-26 14:24:05,901 [INFO] Loaded extras data: 1554400 rows.
+2025-03-26 14:24:05,925 [INFO] Loaded orderbook data: 49850 rows.
+2025-03-26 14:24:05,925 [INFO] Loaded orderbook data: 49850 rows.
+2025-03-26 14:24:06,030 [INFO] [ML] Prediction: 1
+2025-03-26 14:24:06,030 [INFO] [ML] Prediction: 1
+2025-03-26 14:24:37,445 [INFO] [ML] Prediction: 1
+2025-03-26 14:24:37,445 [INFO] [ML] Prediction: 1
+2025-03-26 14:25:08,756 [INFO] [ML] Prediction: 1
+2025-03-26 14:25:08,756 [INFO] [ML] Prediction: 1

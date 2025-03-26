@@ -1,0 +1,9 @@
+/Users/igorbulgakov/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2025-03-26 14:24:03,401 [INFO] Trades database initialized and table ensured.
+2025-03-26 14:24:04,020 [INFO] Websocket connected
+2025-03-26 14:24:04,020 [INFO] Connection Opened... Listening for Big Trades 🧐
+2025-03-26 14:24:08,442 [INFO] Trade - ID: 19205350 | Side: BUY | Price: 0.04265 | Qty: 248.0
+2025-03-26 14:24:11,524 [INFO] Trade - ID: 19205351 | Side: SELL | Price: 0.04261 | Qty: 153.0
+2025-03-26 14:25:03,803 [INFO] Trade - ID: 19205352 | Side: BUY | Price: 0.04265 | Qty: 269.0
+2025-03-26 14:25:03,804 [INFO] Trade - ID: 19205353 | Side: BUY | Price: 0.04266 | Qty: 126.0

@@ -7,33 +7,36 @@ import time
 import os
 import logging
 import requests
-import csv
+import sqlite3
 
-# ========================
-# Configuration
-# ========================
+# ----------------------------
+# Configuration & File Paths
+# ----------------------------
 
-# Set the base directory for the project
+# Set the base directory for your project
 BASE_DIR = "/Users/igorbulgakov/Documents/vib_bot"
 
-# File paths (absolute)
+# CSV files (for trades, extras, orderbook)
 TRADES_FILE = os.path.join(BASE_DIR, "vib_trades_log.csv")
 EXTRAS_FILE = os.path.join(BASE_DIR, "vib_extra_data.csv")
 ORDERBOOK_FILE = os.path.join(BASE_DIR, "orderbook_data.csv")
-MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
-PREDICTIONS_CSV = os.path.join(BASE_DIR, "predictions.csv")
-FEEDBACK_CSV = os.path.join(BASE_DIR, "feedback_log.csv")
 
-# Telegram Bot Config
+# Model file path
+MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
+
+# SQLite DB file to store predictions and feedback
+DB_FILE = os.path.join(BASE_DIR, "vib_master.db")
+
+# Telegram Bot Configuration
 TELEGRAM_TOKEN = "7636229600:AAESoUoIB6nIcUHxme43x8byKhX1sok5zPk"
 CHAT_ID = 531265494
 
-# Feedback configuration
-FEEDBACK_WINDOW = 3600  # 1 hour in seconds
+# Feedback window (in seconds)
+FEEDBACK_WINDOW = 3600  # 1 hour
 
-# ========================
+# ----------------------------
 # Logging Setup
-# ========================
+# ----------------------------
 
 logger = logging.getLogger("vib_master")
 logger.setLevel(logging.DEBUG)
@@ -48,12 +51,13 @@ console_formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
 console_handler.setFormatter(console_formatter)
 logger.addHandler(console_handler)
 
-# ========================
-# Caching Setup for Data Loading
-# ========================
+# ----------------------------
+# Global Variables & Caching
+# ----------------------------
 
-cached_data = None
-last_mod_times = {}
+pending_predictions = []  # List to hold predictions pending feedback
+_cached_data = None
+_last_mod_times = {}
 
 def get_file_mod_time(filepath):
     try:
@@ -64,18 +68,17 @@ def get_file_mod_time(filepath):
 
 def load_data():
     """
-    Load CSV files if they've changed since last load.
-    Caches the DataFrames to reduce repeated I/O.
+    Loads CSV files for trades, extras, and orderbook.
+    Caches the DataFrames if files haven't changed.
     """
-    global cached_data, last_mod_times
+    global _cached_data, _last_mod_times
     mod_times = {
         "trades": get_file_mod_time(TRADES_FILE),
         "extras": get_file_mod_time(EXTRAS_FILE),
         "orderbook": get_file_mod_time(ORDERBOOK_FILE)
     }
-    # If cached and file modification times are unchanged, return cached data.
-    if cached_data is not None and mod_times == last_mod_times:
-        return cached_data
+    if _cached_data is not None and mod_times == _last_mod_times:
+        return _cached_data
 
     try:
         df_trades = pd.read_csv(TRADES_FILE, parse_dates=["LocalTime", "TradeTime"])
@@ -83,14 +86,12 @@ def load_data():
     except Exception as e:
         logger.error(f"Error loading trades CSV: {e}")
         df_trades = pd.DataFrame()
-
     try:
         df_extras = pd.read_csv(EXTRAS_FILE, parse_dates=["open_time", "close_time"])
         logger.info(f"Loaded extras data: {len(df_extras)} rows.")
     except Exception as e:
         logger.error(f"Error loading extras CSV: {e}")
         df_extras = pd.DataFrame()
-
     try:
         df_orderbook = pd.read_csv(ORDERBOOK_FILE)
         df_orderbook["timestamp"] = pd.to_datetime(df_orderbook["timestamp"], format="%Y-%m-%d %H:%M:%S")
@@ -98,17 +99,98 @@ def load_data():
     except Exception as e:
         logger.error(f"Error loading orderbook CSV: {e}")
         df_orderbook = pd.DataFrame()
+    _cached_data = (df_trades, df_extras, df_orderbook)
+    _last_mod_times = mod_times
+    return _cached_data
 
-    # Update modification times and cache the data
-    cached_data = (df_trades, df_extras, df_orderbook)
-    last_mod_times = mod_times
-    return cached_data
+# ----------------------------
+# Database Initialization
+# ----------------------------
 
-# ========================
-# Core Functions
-# ========================
+def init_db():
+    """Initialize the SQLite database and create tables if they do not exist."""
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS predictions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp TEXT,
+            predicted_label INTEGER
+        );
+    """)
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS feedback (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp TEXT,
+            predicted_label INTEGER,
+            true_label INTEGER
+        );
+    """)
+    conn.commit()
+    conn.close()
+    logger.info("Database initialized (tables predictions and feedback ensured).")
 
-pending_predictions = []  # Global list for pending predictions
+# Initialize the database at startup
+init_db()
+
+# ----------------------------
+# Data Merging
+# ----------------------------
+
+def merge_data(df_trades, df_extras, df_orderbook):
+    df_vib = df_extras[df_extras["symbol"] == "VIBUSDT"].copy()
+    if df_vib.empty:
+        logger.error("No VIBUSDT data found.")
+        return None
+    df_vib.sort_values("close_time", inplace=True)
+    latest_candle = df_vib.iloc[-1]
+
+    big_trades_count = len(df_trades[
+        (df_trades["TradeTime"] >= latest_candle["close_time"] - timedelta(minutes=5)) &
+        (df_trades["Quantity"] >= 100000)
+    ])
+    if not df_orderbook.empty:
+        valid_snapshots = df_orderbook[df_orderbook["timestamp"] <= latest_candle["close_time"]]
+        orderbook_spread = valid_snapshots.iloc[-1]["spread"] if not valid_snapshots.empty else 0.0
+    else:
+        orderbook_spread = 0.0
+
+    features = [
+        latest_candle.get("rsi", 0),
+        latest_candle.get("macd_hist", 0),
+        latest_candle.get("close", 0),
+        latest_candle.get("volume", 0),
+        big_trades_count,
+        orderbook_spread,
+        0, 0, 0  # Placeholders for diff_BTC, diff_ETH, diff_RNDR
+    ]
+    return np.array([features]), latest_candle["close"], latest_candle["close_time"]
+
+# ----------------------------
+# Database Write Functions
+# ----------------------------
+
+def store_prediction(timestamp, predicted_label):
+    """Store a prediction into the predictions table."""
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("INSERT INTO predictions (timestamp, predicted_label) VALUES (?, ?)",
+                (timestamp, predicted_label))
+    conn.commit()
+    conn.close()
+
+def store_feedback(timestamp, predicted_label, true_label):
+    """Store feedback into the feedback table."""
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("INSERT INTO feedback (timestamp, predicted_label, true_label) VALUES (?, ?, ?)",
+                (timestamp, predicted_label, true_label))
+    conn.commit()
+    conn.close()
+
+# ----------------------------
+# ML Feedback & Inference
+# ----------------------------
 
 def label_candle(pct_change):
     if pct_change >= 0.10:
@@ -135,60 +217,6 @@ def send_telegram_alert(message):
             logger.error(f"Telegram Error: {resp.text}")
     except Exception as e:
         logger.error(f"Telegram Exception: {e}")
-
-def merge_data(df_trades, df_extras, df_orderbook):
-    """
-    Filters VIBUSDT data and constructs a feature vector using the latest candle.
-    """
-    df_vib = df_extras[df_extras["symbol"] == "VIBUSDT"].copy()
-    if df_vib.empty:
-        logger.error("No VIBUSDT data found.")
-        return None
-    df_vib.sort_values("close_time", inplace=True)
-    latest_candle = df_vib.iloc[-1]
-
-    # Compute the number of big trades in the last 5 minutes.
-    big_trades_count = len(df_trades[
-        (df_trades["TradeTime"] >= latest_candle["close_time"] - timedelta(minutes=5)) &
-        (df_trades["Quantity"] >= 100000)
-    ])
-
-    # Get the latest orderbook spread.
-    if not df_orderbook.empty:
-        valid_snapshots = df_orderbook[df_orderbook["timestamp"] <= latest_candle["close_time"]]
-        orderbook_spread = valid_snapshots.iloc[-1]["spread"] if not valid_snapshots.empty else 0.0
-    else:
-        orderbook_spread = 0.0
-
-    features = [
-        latest_candle.get("rsi", 0),
-        latest_candle.get("macd_hist", 0),
-        latest_candle.get("close", 0),
-        latest_candle.get("volume", 0),
-        big_trades_count,
-        orderbook_spread,
-        0, 0, 0  # Placeholders for diff_BTC, diff_ETH, diff_RNDR if not computed here.
-    ]
-    return np.array([features]), latest_candle["close"], latest_candle["close_time"]
-
-def store_prediction(timestamp, predicted_label, actual_label=None):
-    file_exists = os.path.exists(PREDICTIONS_CSV)
-    with open(PREDICTIONS_CSV, "a", newline="") as csvfile:
-        writer = csv.writer(csvfile)
-        # Write header if file doesn't exist.
-        if not file_exists:
-            header = ["timestamp", "predicted_label", "actual_label"] if actual_label is not None else ["timestamp", "predicted_label"]
-            writer.writerow(header)
-        row = [timestamp, predicted_label] if actual_label is None else [timestamp, predicted_label, actual_label]
-        writer.writerow(row)
-
-def store_feedback(timestamp, predicted_label, true_label):
-    file_exists = os.path.exists(FEEDBACK_CSV)
-    with open(FEEDBACK_CSV, "a", newline="") as csvfile:
-        writer = csv.writer(csvfile)
-        if not file_exists:
-            writer.writerow(["timestamp", "predicted_label", "true_label"])
-        writer.writerow([timestamp, predicted_label, true_label])
 
 def process_feedback(current_vib_close, current_timestamp, model):
     global pending_predictions
