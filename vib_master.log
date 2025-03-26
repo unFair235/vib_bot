@@ -10189,3 +10189,347 @@ AttributeError: 'RandomForestClassifier' object has no attribute 'partial_fit'
 2025-03-26 14:24:37,445 [INFO] [ML] Prediction: 1
 2025-03-26 14:25:08,756 [INFO] [ML] Prediction: 1
 2025-03-26 14:25:08,756 [INFO] [ML] Prediction: 1
+2025-03-26 15:46:29,861 [INFO] Master database initialized (tables predictions and feedback ensured).
+2025-03-26 15:46:30,323 [INFO] Model loaded successfully.
+2025-03-26 15:46:30,324 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 15:46:30,331 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 15:46:30,332 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 15:46:30,333 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 15:49:45,962 [INFO] Master database initialized (tables predictions and feedback ensured).
+2025-03-26 15:49:46,373 [INFO] Model loaded successfully.
+2025-03-26 15:49:46,392 [INFO] Loaded extras data: 400 rows.
+2025-03-26 15:49:46,393 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 15:49:46,394 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 15:49:46,398 [INFO] [ML] Prediction: 1
+2025-03-26 15:50:17,763 [INFO] Loaded extras data: 400 rows.
+2025-03-26 15:50:17,765 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 15:50:17,766 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 15:50:17,774 [INFO] [ML] Prediction: 1
+2025-03-26 15:52:43,473 [INFO] Loaded extras data: 400 rows.
+2025-03-26 15:52:43,475 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 15:52:43,476 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 15:52:43,484 [INFO] [ML] Prediction: 1
+2025-03-26 15:52:43,488 [ERROR] Telegram Exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7636229600:AAESoUoIB6nIcUHxme43x8byKhX1sok5zPk/sendMessage (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11e79b640>: Failed to resolve 'api.telegram.org' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-26 16:06:33,141 [INFO] Loaded extras data: 400 rows.
+2025-03-26 16:06:33,144 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:06:33,144 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:06:33,149 [INFO] [ML] Prediction: 1
+2025-03-26 16:06:33,151 [ERROR] Telegram Exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7636229600:AAESoUoIB6nIcUHxme43x8byKhX1sok5zPk/sendMessage (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x11e7b4580>: Failed to resolve 'api.telegram.org' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-03-26 16:07:03,175 [INFO] Loaded extras data: 400 rows.
+2025-03-26 16:07:03,176 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:07:03,176 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:07:03,181 [INFO] [ML] Prediction: 1
+2025-03-26 16:07:50,007 [INFO] Loaded extras data: 400 rows.
+2025-03-26 16:07:50,008 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:07:50,009 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:07:50,015 [INFO] [ML] Prediction: 1
+2025-03-26 16:08:07,231 [INFO] Master database initialized (tables predictions and feedback ensured).
+2025-03-26 16:08:07,755 [INFO] Model loaded successfully.
+2025-03-26 16:08:07,757 [INFO] No feedback records found in DB for model update.
+2025-03-26 16:08:07,773 [INFO] Loaded trades data: 16133 rows.
+2025-03-26 16:08:07,775 [INFO] Loaded extras data: 400 rows.
+2025-03-26 16:08:07,776 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:08:07,777 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:08:07,781 [INFO] [ML] Prediction: 1
+2025-03-26 16:08:38,967 [INFO] Loaded trades data: 16133 rows.
+2025-03-26 16:08:38,970 [INFO] Loaded extras data: 400 rows.
+2025-03-26 16:08:38,971 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:08:38,971 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:08:38,977 [INFO] [ML] Prediction: 1
+2025-03-26 16:09:10,454 [INFO] Loaded trades data: 16133 rows.
+2025-03-26 16:09:10,456 [INFO] Loaded extras data: 400 rows.
+2025-03-26 16:09:10,457 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:09:10,457 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:09:10,464 [INFO] [ML] Prediction: 1
+2025-03-26 16:09:41,676 [INFO] Loaded trades data: 16133 rows.
+2025-03-26 16:09:41,680 [INFO] Loaded extras data: 400 rows.
+2025-03-26 16:09:41,681 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:09:41,682 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:09:41,687 [INFO] [ML] Prediction: 1
+2025-03-26 16:10:12,907 [INFO] Loaded trades data: 16133 rows.
+2025-03-26 16:10:12,909 [INFO] Loaded extras data: 400 rows.
+2025-03-26 16:10:12,910 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:10:12,911 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:10:12,916 [INFO] [ML] Prediction: 1
+2025-03-26 16:10:52,255 [INFO] Master database initialized (tables predictions, feedback, and pending_feedback ensured).
+2025-03-26 16:10:52,734 [INFO] Model loaded successfully.
+2025-03-26 16:10:52,737 [INFO] No pending feedback records in DB.
+2025-03-26 16:10:52,757 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:10:52,759 [INFO] No pending feedback records in DB.
+2025-03-26 16:10:52,763 [INFO] [ML] Prediction: 1
+2025-03-26 16:11:23,964 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:11:23,965 [INFO] Pending feedback record 1 ready for processing (predicted b'\x01\x00\x00\x00\x00\x00\x00\x00').
+2025-03-26 16:11:23,970 [INFO] [ML] Prediction: 1
+2025-03-26 16:11:55,232 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:11:55,233 [INFO] Pending feedback record 2 ready for processing (predicted b'\x01\x00\x00\x00\x00\x00\x00\x00').
+2025-03-26 16:11:55,238 [INFO] [ML] Prediction: 1
+2025-03-26 16:12:26,458 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:12:26,460 [INFO] Pending feedback record 3 ready for processing (predicted b'\x01\x00\x00\x00\x00\x00\x00\x00').
+2025-03-26 16:12:26,464 [INFO] [ML] Prediction: 1
+2025-03-26 16:12:57,705 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:12:57,707 [INFO] Pending feedback record 4 ready for processing (predicted b'\x01\x00\x00\x00\x00\x00\x00\x00').
+2025-03-26 16:12:57,711 [INFO] [ML] Prediction: 1
+2025-03-26 16:13:28,909 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:13:28,910 [INFO] Pending feedback record 5 ready for processing (predicted b'\x01\x00\x00\x00\x00\x00\x00\x00').
+2025-03-26 16:13:28,918 [INFO] [ML] Prediction: 1
+2025-03-26 16:14:00,148 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:14:00,149 [INFO] Pending feedback record 6 ready for processing (predicted b'\x01\x00\x00\x00\x00\x00\x00\x00').
+2025-03-26 16:14:00,154 [INFO] [ML] Prediction: 1
+2025-03-26 16:14:31,404 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:14:31,407 [INFO] Pending feedback record 7 ready for processing (predicted b'\x01\x00\x00\x00\x00\x00\x00\x00').
+2025-03-26 16:14:31,411 [INFO] [ML] Prediction: 1
+2025-03-26 16:15:03,629 [INFO] Master database initialized (tables predictions, feedback, and pending_feedback ensured).
+2025-03-26 16:15:04,185 [INFO] Model loaded successfully.
+2025-03-26 16:15:04,187 [INFO] [DB Feedback] Record 8: elapsed=32585.19s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:15:04,188 [INFO] Processed and cleared DB feedback records.
+2025-03-26 16:15:04,208 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:18:59,422 [INFO] Master database initialized (tables predictions, feedback, and pending_feedback ensured).
+2025-03-26 16:18:59,866 [INFO] Model loaded successfully.
+2025-03-26 16:18:59,867 [INFO] No pending feedback records found in DB.
+2025-03-26 16:18:59,886 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:18:59,891 [INFO] [ML] Prediction: 1
+2025-03-26 16:19:31,332 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:19:31,339 [INFO] [ML] Prediction: 1
+2025-03-26 16:20:02,702 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:20:02,708 [INFO] [ML] Prediction: 1
+2025-03-26 16:20:33,844 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:20:33,851 [INFO] [ML] Prediction: 1
+2025-03-26 16:21:05,157 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:21:05,166 [INFO] [ML] Prediction: 1
+2025-03-26 16:21:36,461 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:21:36,470 [INFO] [ML] Prediction: 1
+2025-03-26 16:22:07,721 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:22:07,730 [INFO] [ML] Prediction: 1
+2025-03-26 16:22:39,213 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:22:39,223 [INFO] [ML] Prediction: 1
+2025-03-26 16:23:10,649 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:23:10,658 [INFO] [ML] Prediction: 1
+2025-03-26 16:23:42,227 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:23:42,233 [INFO] [ML] Prediction: 1
+2025-03-26 16:24:13,715 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:24:13,721 [INFO] [ML] Prediction: 1
+2025-03-26 16:24:46,003 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:24:46,012 [INFO] [ML] Prediction: 1
+2025-03-26 16:25:12,699 [INFO] Master database initialized (tables predictions, feedback, and pending_feedback ensured).
+2025-03-26 16:25:13,142 [INFO] Model loaded successfully.
+2025-03-26 16:25:13,144 [INFO] [DB Feedback] Record 9: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,145 [INFO] [DB Feedback] Record 10: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,145 [INFO] [DB Feedback] Record 11: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,146 [INFO] [DB Feedback] Record 12: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,146 [INFO] [DB Feedback] Record 13: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,147 [INFO] [DB Feedback] Record 14: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,147 [INFO] [DB Feedback] Record 15: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,147 [INFO] [DB Feedback] Record 16: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,148 [INFO] [DB Feedback] Record 17: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,148 [INFO] [DB Feedback] Record 18: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,149 [INFO] [DB Feedback] Record 19: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,149 [INFO] [DB Feedback] Record 20: elapsed=33194.14s, predicted_label=b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:25:13,150 [INFO] Processed and cleared DB feedback records.
+2025-03-26 16:25:13,168 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:25:13,173 [INFO] [ML] Prediction: 1
+2025-03-26 16:25:44,762 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:25:44,769 [INFO] [ML] Prediction: 1
+2025-03-26 16:26:16,070 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:26:16,078 [INFO] [ML] Prediction: 1
+2025-03-26 16:26:47,458 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:26:47,467 [INFO] [ML] Prediction: 1
+2025-03-26 16:27:18,783 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:27:18,788 [INFO] [ML] Prediction: 1
+2025-03-26 16:27:50,930 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:27:50,940 [INFO] [ML] Prediction: 1
+2025-03-26 16:28:22,265 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:28:22,273 [INFO] [ML] Prediction: 1
+2025-03-26 16:28:53,496 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:28:53,506 [INFO] [ML] Prediction: 1
+2025-03-26 16:29:24,491 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:29:24,500 [INFO] [ML] Prediction: 1
+2025-03-26 16:29:55,697 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:29:55,706 [INFO] [ML] Prediction: 1
+2025-03-26 16:30:27,094 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:30:27,102 [INFO] [ML] Prediction: 1
+2025-03-26 16:30:58,326 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:30:58,334 [INFO] [ML] Prediction: 1
+2025-03-26 16:31:29,576 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:31:29,585 [INFO] [ML] Prediction: 1
+2025-03-26 16:32:00,917 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:32:00,925 [INFO] [ML] Prediction: 1
+2025-03-26 16:32:32,223 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:32:32,232 [INFO] [ML] Prediction: 1
+2025-03-26 16:33:03,538 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:33:03,545 [INFO] [ML] Prediction: 1
+2025-03-26 16:33:34,945 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:33:34,951 [INFO] [ML] Prediction: 1
+2025-03-26 16:34:06,458 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:34:06,466 [INFO] [ML] Prediction: 1
+2025-03-26 16:34:37,552 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:34:37,561 [INFO] [ML] Prediction: 1
+2025-03-26 16:35:08,769 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:35:08,777 [INFO] [ML] Prediction: 1
+2025-03-26 16:35:40,147 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:35:40,156 [INFO] [ML] Prediction: 1
+2025-03-26 16:36:11,495 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:36:11,500 [INFO] [ML] Prediction: 1
+2025-03-26 16:36:42,790 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:36:42,795 [INFO] [ML] Prediction: 1
+2025-03-26 16:37:13,994 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:11:00'), 'open': 0.04275, 'high': 0.04276, 'low': 0.04275, 'close': 0.04276, 'volume': 1869.0, 'close_time': Timestamp('2025-03-26 07:11:59.999000'), 'quote_asset_volume': 79.90116, 'number_of_trades': 3, 'taker_buy_base': 828.0, 'taker_buy_quote': 35.39841, 'ignore': 0, 'symbol': 'VIBUSDT', 'rsi': 52.069981014851635, 'macd': 4.51077397519567e-06, 'macd_signal': 8.63242881300047e-06, 'macd_hist': -4.1216548378048e-06}
+2025-03-26 16:37:14,003 [INFO] [ML] Prediction: 1
+2025-03-26 16:37:20,423 [INFO] Master database initialized (tables predictions, feedback, and pending_feedback ensured).
+2025-03-26 16:37:20,873 [INFO] Model loaded successfully.
+2025-03-26 16:37:20,876 [INFO] [DB Feedback] Record 21: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,877 [INFO] [DB Feedback] Record 22: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,877 [INFO] [DB Feedback] Record 23: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,878 [INFO] [DB Feedback] Record 24: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,878 [INFO] [DB Feedback] Record 25: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,879 [INFO] [DB Feedback] Record 26: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,879 [INFO] [DB Feedback] Record 27: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,880 [INFO] [DB Feedback] Record 28: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,880 [INFO] [DB Feedback] Record 29: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,881 [INFO] [DB Feedback] Record 30: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,882 [INFO] [DB Feedback] Record 31: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,882 [INFO] [DB Feedback] Record 32: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,882 [INFO] [DB Feedback] Record 33: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,883 [INFO] [DB Feedback] Record 34: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,884 [INFO] [DB Feedback] Record 35: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,884 [INFO] [DB Feedback] Record 36: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,885 [INFO] [DB Feedback] Record 37: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,885 [INFO] [DB Feedback] Record 38: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,886 [INFO] [DB Feedback] Record 39: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,886 [INFO] [DB Feedback] Record 40: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,887 [INFO] [DB Feedback] Record 41: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,887 [INFO] [DB Feedback] Record 42: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,888 [INFO] [DB Feedback] Record 43: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,889 [INFO] [DB Feedback] Record 44: Elapsed: 33921.88s, Predicted: b'\x01\x00\x00\x00\x00\x00\x00\x00'
+2025-03-26 16:37:20,889 [INFO] Processed and cleared DB feedback records.
+2025-03-26 16:37:20,890 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:37:20,897 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:37:20,898 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:37:20,899 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:39:39,966 [INFO] Master database initialized (tables predictions, feedback, and pending_feedback ensured).
+2025-03-26 16:39:40,391 [INFO] Model loaded successfully.
+2025-03-26 16:39:40,392 [INFO] No pending feedback records found in DB.
+2025-03-26 16:39:40,393 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:39:40,400 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:39:40,400 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:39:40,401 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:39:40,402 [ERROR] No trade time column found in trades data.
+2025-03-26 16:39:40,402 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:40:10,414 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:40:10,429 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:40:10,431 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:40:10,433 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:40:10,433 [ERROR] No trade time column found in trades data.
+2025-03-26 16:40:10,433 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:40:40,445 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:40:40,459 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:40:40,461 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:40:40,463 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:40:40,463 [ERROR] No trade time column found in trades data.
+2025-03-26 16:40:40,463 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:41:10,467 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:41:10,487 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:41:10,489 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:41:10,494 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:41:10,494 [ERROR] No trade time column found in trades data.
+2025-03-26 16:41:10,494 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:41:40,497 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:41:40,517 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:41:40,521 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:41:40,524 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:41:40,524 [ERROR] No trade time column found in trades data.
+2025-03-26 16:41:40,524 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:42:10,530 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:42:10,547 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:42:10,549 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:42:10,550 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:42:10,550 [ERROR] No trade time column found in trades data.
+2025-03-26 16:42:10,550 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:42:40,560 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:42:40,582 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:42:40,585 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:42:40,588 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:42:40,588 [ERROR] No trade time column found in trades data.
+2025-03-26 16:42:40,588 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:43:10,600 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:43:10,621 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:43:10,623 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:43:10,626 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:43:10,626 [ERROR] No trade time column found in trades data.
+2025-03-26 16:43:10,626 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:43:16,903 [INFO] Master database initialized (tables predictions, feedback, and pending_feedback ensured).
+2025-03-26 16:43:17,323 [INFO] Model loaded successfully.
+2025-03-26 16:43:17,324 [INFO] No pending feedback records found in DB.
+2025-03-26 16:43:17,325 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:43:17,332 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:43:17,333 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:43:17,334 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:43:17,334 [ERROR] No trade time column found in trades data.
+2025-03-26 16:43:17,334 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:43:47,346 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:43:47,361 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:43:47,363 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:43:47,365 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:43:47,365 [ERROR] No trade time column found in trades data.
+2025-03-26 16:43:47,365 [WARNING] [ML] Merge returned None. Skipping inference.
+2025-03-26 16:46:35,792 [INFO] Master database initialized (tables predictions, feedback, and pending_feedback ensured).
+2025-03-26 16:46:36,221 [INFO] Model loaded successfully.
+2025-03-26 16:46:36,223 [INFO] No pending feedback records found in DB.
+2025-03-26 16:46:36,224 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:46:36,231 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:46:36,232 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:46:36,233 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:48:48,903 [INFO] Master database initialized (tables predictions, feedback, and pending_feedback ensured).
+2025-03-26 16:48:49,319 [INFO] Model loaded successfully.
+2025-03-26 16:48:49,321 [INFO] No pending feedback records found in DB.
+2025-03-26 16:48:49,323 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:48:49,330 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:48:49,331 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:48:49,332 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:48:49,337 [INFO] [ML] Prediction: 1
+2025-03-26 16:49:20,716 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:49:20,736 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:49:20,738 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:49:20,741 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:49:20,751 [INFO] [ML] Prediction: 1
+2025-03-26 16:49:52,978 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:49:52,998 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:49:53,001 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:49:53,004 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:49:53,014 [INFO] [ML] Prediction: 1
+2025-03-26 16:50:26,559 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:50:26,580 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:50:26,583 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:50:26,586 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:50:26,596 [INFO] [ML] Prediction: 1
+2025-03-26 16:50:57,880 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:50:57,899 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:50:57,901 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:50:57,903 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:50:57,912 [INFO] [ML] Prediction: 1
+2025-03-26 16:51:29,748 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:51:29,762 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:51:29,763 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:51:29,765 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:51:29,770 [INFO] [ML] Prediction: 1
+2025-03-26 16:51:34,780 [ERROR] Telegram Exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7636229600:AAESoUoIB6nIcUHxme43x8byKhX1sok5zPk/sendMessage (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x120ef5eb0>, 'Connection to api.telegram.org timed out. (connect timeout=5)'))
+2025-03-26 16:52:04,795 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:52:04,815 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:52:04,818 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:52:04,820 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:52:04,829 [INFO] [ML] Prediction: 1
+2025-03-26 16:52:09,835 [ERROR] Telegram Exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7636229600:AAESoUoIB6nIcUHxme43x8byKhX1sok5zPk/sendMessage (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x120eeb280>, 'Connection to api.telegram.org timed out. (connect timeout=5)'))
+2025-03-26 16:52:39,861 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:52:39,882 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:52:39,884 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:52:39,886 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:52:39,896 [INFO] [ML] Prediction: 1
+2025-03-26 16:53:11,159 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:53:11,179 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:53:11,182 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:53:11,185 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:53:11,195 [INFO] [ML] Prediction: 1
+2025-03-26 16:53:42,458 [INFO] Loaded trades data from DB: 173 rows.
+2025-03-26 16:53:42,478 [INFO] Loaded extras data from DB: 2000 rows.
+2025-03-26 16:53:42,480 [INFO] Loaded orderbook data from DB: 12 rows.
+2025-03-26 16:53:42,483 [INFO] Latest VIB candle: {'open_time': Timestamp('2025-03-26 07:32:00'), 'open': 0.04282, 'high': 0.04282, 'low': 0.04282, 'close': 0.04282, 'volume': 264.0, 'close_time': Timestamp('2025-03-26 07:32:59.999000'), 'quote_asset_volume': 11.30448, 'number_of_trades': 1, 'taker_buy_base': 0.0, 'taker_buy_quote': 0.0, 'ignore': '0', 'symbol': 'VIBUSDT', 'rsi': 61.499099020493624, 'macd': 2.3093856493155984e-05, 'macd_signal': -5.515855350287323e-07, 'macd_hist': 2.3645442028184717e-05}
+2025-03-26 16:53:42,493 [INFO] [ML] Prediction: 1
+2025-03-26 16:53:48,636 [ERROR] Telegram Exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=5)

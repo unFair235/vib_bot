@@ -18,7 +18,7 @@ DB_FILE = os.path.join(BASE_DIR, "vib_extra_data.db")  # Database for extra data
 # Binance API configuration
 API_URL = "https://api.binance.com/api/v3/klines"
 KLINE_INTERVAL = "1m"
-KLINE_LIMIT = 100
+KLINE_LIMIT = 500
 
 # List of symbols to fetch
 SYMBOLS = ["VIBUSDT", "BTCUSDT", "ETHUSDT", "RENDERUSDT"]
