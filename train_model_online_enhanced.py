@@ -19,27 +19,26 @@ import requests
 BASE_DIR = "/Users/igorbulgakov/Documents/vib_bot"
 
 TRADES_FILE = os.path.join(BASE_DIR, "vib_trades_log.csv")
+# Use dayfirst=True since dates are in the format "25/03/2025 02:30"
 EXTRAS_FILE = os.path.join(BASE_DIR, "vib_extra_data.csv")
 ORDERBOOK_FILE = os.path.join(BASE_DIR, "orderbook_data.csv")
 
 MODEL_PATH = os.path.join(BASE_DIR, "model_online_enhanced.pkl")
 SCALER_PATH = os.path.join(BASE_DIR, "scaler_online.pkl")
 
-# SQLite database for storing merged training data
+# Database file for storing merged training data and feedback
 DB_FILE = os.path.join(BASE_DIR, "training_data.db")
 
-# Telegram configuration (ensure these are defined)
+# Telegram configuration (if used in other parts of the pipeline)
 TELEGRAM_TOKEN = "7636229600:AAESoUoIB6nIcUHxme43x8byKhX1sok5zPk"
 CHAT_ID = 531265494
 
 # ----------------------------
 # Logging Setup
 # ----------------------------
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[logging.StreamHandler()]
-)
+logging.basicConfig(level=logging.INFO,
+                    format="%(asctime)s [%(levelname)s] %(message)s",
+                    handlers=[logging.StreamHandler()])
 logger = logging.getLogger(__name__)
 
 # Constants for training
@@ -69,15 +68,23 @@ def init_training_db():
             label INTEGER
         );
     """)
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS feedback (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp TEXT,
+            predicted_label INTEGER,
+            true_label INTEGER
+        );
+    """)
     conn.commit()
     conn.close()
-    logger.info("Training database initialized (merged_training_data table ensured).")
+    logger.info("Training database initialized (merged_training_data and feedback tables ensured).")
 
 init_training_db()
 
 def store_training_data(df_train):
+    """Store the merged training DataFrame into the merged_training_data table."""
     conn = sqlite3.connect(DB_FILE)
-    # Add a timestamp column indicating when data was stored
     df_train["timestamp"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     cols = ["timestamp", "rsi", "macd_hist", "vib_close", "volume", 
             "big_trades_count", "orderbook_spread", "diff_BTC", "diff_ETH", "diff_RNDR", "label"]
@@ -86,12 +93,31 @@ def store_training_data(df_train):
     conn.close()
     logger.info(f"Merged training data stored in database with {len(df_train)} rows.")
 
+def store_prediction(timestamp, predicted_label):
+    """Store a prediction into the merged_training_data table using the 'label' column."""
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("INSERT INTO merged_training_data (timestamp, label) VALUES (?, ?)", 
+                (timestamp, predicted_label))
+    conn.commit()
+    conn.close()
+
+def store_feedback(timestamp, predicted_label, true_label):
+    """Store feedback in the feedback table."""
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("INSERT INTO feedback (timestamp, predicted_label, true_label) VALUES (?, ?, ?)",
+                (timestamp, predicted_label, true_label))
+    conn.commit()
+    conn.close()
+
 # ----------------------------
 # Data Loading & Merging Functions
 # ----------------------------
 def load_data():
     try:
-        df_extras = pd.read_csv(EXTRAS_FILE, parse_dates=["open_time", "close_time"])
+        # Use dayfirst=True to correctly parse dates in the format "dd/mm/yyyy hh:mm"
+        df_extras = pd.read_csv(EXTRAS_FILE, parse_dates=["open_time", "close_time"], dayfirst=True)
         logger.info(f"Loaded extras data: {len(df_extras)} rows.")
     except Exception as e:
         logger.error(f"Error loading extras CSV: {e}")
@@ -113,6 +139,10 @@ def load_data():
     return df_extras, df_trades, df_orderbook
 
 def merge_data(df_extras, df_trades, df_orderbook):
+    """
+    Filters for VIBUSDT data, merges it with other symbols, and creates a feature vector.
+    Returns: (features (np.array), latest_vib_close, latest_timestamp)
+    """
     df_vib = df_extras[df_extras["symbol"] == "VIBUSDT"].copy()
     if df_vib.empty:
         logger.error("No VIBUSDT data found.")
@@ -159,32 +189,6 @@ def label_candle(pct_change):
         return -2
     else:
         return -3
-
-def store_prediction(timestamp, predicted_label):
-    conn = sqlite3.connect(DB_FILE)
-    cur = conn.cursor()
-    # Insert the prediction into the 'label' column of merged_training_data table
-    cur.execute("INSERT INTO merged_training_data (timestamp, label) VALUES (?, ?)", 
-                (timestamp, predicted_label))
-    conn.commit()
-    conn.close()
-
-def store_feedback(timestamp, predicted_label, true_label):
-    conn = sqlite3.connect(DB_FILE)
-    cur = conn.cursor()
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS feedback (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            timestamp TEXT,
-            predicted_label INTEGER,
-            true_label INTEGER
-        );
-    """)
-    conn.commit()
-    cur.execute("INSERT INTO feedback (timestamp, predicted_label, true_label) VALUES (?, ?, ?)",
-                (timestamp, predicted_label, true_label))
-    conn.commit()
-    conn.close()
 
 pending_predictions = []
 
