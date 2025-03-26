@@ -1,0 +1,15 @@
+2025-03-25 15:04:37,220 [INFO] Loaded 400 candle rows, 3196 trade rows, and 892 orderbook snapshots.
+2025-03-25 15:04:37,407 [INFO] Training dataset created with 267 rows.
+2025-03-25 15:04:37,414 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-25 15:04:37,481 [INFO] Test Accuracy: 0.78
+2025-03-25 15:04:37,484 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.83      0.78      0.81        32
+           1       0.71      0.77      0.74        22
+
+    accuracy                           0.78        54
+   macro avg       0.77      0.78      0.77        54
+weighted avg       0.78      0.78      0.78        54
+
+2025-03-25 15:04:37,508 [INFO] Model saved as model.pkl

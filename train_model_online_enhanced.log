@@ -1,0 +1,400 @@
+2025-03-25 21:02:00,506 [INFO] Training dataset created with 42097 rows.
+2025-03-25 21:02:00,660 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-25 21:02:00,664 [INFO] Scaler saved as scaler_online.pkl
+2025-03-25 21:02:01,006 [INFO] Best parameters from GridSearchCV: {'alpha': 0.01, 'penalty': 'elasticnet'}
+2025-03-25 21:02:01,020 [INFO] Initial Model Test Accuracy: 0.97
+2025-03-25 21:02:01,024 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.99      0.89      0.94      1998
+           1       0.97      1.00      0.98      6422
+
+    accuracy                           0.97      8420
+   macro avg       0.98      0.94      0.96      8420
+weighted avg       0.97      0.97      0.97      8420
+
+2025-03-25 21:02:01,024 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-25 21:03:23,825 [INFO] Online model update complete and model saved.
+2025-03-25 21:03:23,825 [INFO] Online model update complete.
+2025-03-25 21:05:13,186 [INFO] Online model update complete and model saved.
+2025-03-25 21:05:13,186 [INFO] Online model update complete.
+2025-03-25 21:07:01,419 [INFO] Online model update complete and model saved.
+2025-03-25 21:07:01,419 [INFO] Online model update complete.
+2025-03-25 21:08:44,600 [INFO] Online model update complete and model saved.
+2025-03-25 21:08:44,600 [INFO] Online model update complete.
+2025-03-25 21:10:31,998 [INFO] Online model update complete and model saved.
+2025-03-25 21:10:31,998 [INFO] Online model update complete.
+2025-03-25 21:12:17,342 [INFO] Online model update complete and model saved.
+2025-03-25 21:12:17,342 [INFO] Online model update complete.
+2025-03-25 21:14:07,650 [INFO] Online model update complete and model saved.
+2025-03-25 21:14:07,650 [INFO] Online model update complete.
+2025-03-25 21:15:56,306 [INFO] Online model update complete and model saved.
+2025-03-25 21:15:56,306 [INFO] Online model update complete.
+2025-03-25 21:17:46,127 [INFO] Online model update complete and model saved.
+2025-03-25 21:17:46,127 [INFO] Online model update complete.
+2025-03-25 21:19:38,297 [INFO] Online model update complete and model saved.
+2025-03-25 21:19:38,297 [INFO] Online model update complete.
+2025-03-25 21:21:40,261 [INFO] Online model update complete and model saved.
+2025-03-25 21:21:40,261 [INFO] Online model update complete.
+2025-03-25 21:23:39,916 [INFO] Online model update complete and model saved.
+2025-03-25 21:23:39,916 [INFO] Online model update complete.
+2025-03-25 21:25:45,475 [INFO] Online model update complete and model saved.
+2025-03-25 21:25:45,475 [INFO] Online model update complete.
+2025-03-25 21:27:49,030 [INFO] Online model update complete and model saved.
+2025-03-25 21:27:49,030 [INFO] Online model update complete.
+2025-03-25 21:29:55,095 [INFO] Online model update complete and model saved.
+2025-03-25 21:29:55,096 [INFO] Online model update complete.
+2025-03-25 21:32:03,104 [INFO] Online model update complete and model saved.
+2025-03-25 21:32:03,105 [INFO] Online model update complete.
+2025-03-25 21:34:10,731 [INFO] Online model update complete and model saved.
+2025-03-25 21:34:10,732 [INFO] Online model update complete.
+2025-03-25 21:36:34,765 [INFO] Online model update complete and model saved.
+2025-03-25 21:36:34,766 [INFO] Online model update complete.
+2025-03-25 21:38:42,908 [INFO] Online model update complete and model saved.
+2025-03-25 21:38:42,908 [INFO] Online model update complete.
+2025-03-25 21:41:05,684 [INFO] Online model update complete and model saved.
+2025-03-25 21:41:05,684 [INFO] Online model update complete.
+2025-03-25 21:43:32,801 [INFO] Online model update complete and model saved.
+2025-03-25 21:43:32,801 [INFO] Online model update complete.
+2025-03-25 21:46:05,414 [INFO] Online model update complete and model saved.
+2025-03-25 21:46:05,415 [INFO] Online model update complete.
+2025-03-25 21:48:34,040 [INFO] Online model update complete and model saved.
+2025-03-25 21:48:34,041 [INFO] Online model update complete.
+2025-03-25 21:51:11,307 [INFO] Online model update complete and model saved.
+2025-03-25 21:51:11,307 [INFO] Online model update complete.
+2025-03-25 21:53:45,574 [INFO] Online model update complete and model saved.
+2025-03-25 21:53:45,575 [INFO] Online model update complete.
+2025-03-25 21:56:23,658 [INFO] Online model update complete and model saved.
+2025-03-25 21:56:23,659 [INFO] Online model update complete.
+2025-03-25 21:59:04,175 [INFO] Online model update complete and model saved.
+2025-03-25 21:59:04,175 [INFO] Online model update complete.
+2025-03-25 22:01:56,537 [INFO] Online model update complete and model saved.
+2025-03-25 22:01:56,537 [INFO] Online model update complete.
+2025-03-25 22:04:55,487 [INFO] Online model update complete and model saved.
+2025-03-25 22:04:55,487 [INFO] Online model update complete.
+2025-03-25 22:07:10,444 [INFO] Training dataset created with 63112 rows.
+2025-03-25 22:07:10,669 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-25 22:07:10,675 [INFO] Scaler saved as scaler_online.pkl
+2025-03-25 22:07:11,192 [INFO] Best parameters from GridSearchCV: {'alpha': 0.01, 'penalty': 'l2'}
+2025-03-25 22:07:11,214 [INFO] Initial Model Test Accuracy: 0.96
+2025-03-25 22:07:11,218 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.96      0.91      0.93      3304
+           1       0.97      0.99      0.98      9319
+
+    accuracy                           0.96     12623
+   macro avg       0.96      0.95      0.95     12623
+weighted avg       0.96      0.96      0.96     12623
+
+2025-03-25 22:07:11,219 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-25 22:07:11,222 [INFO] Full retraining complete.
+2025-03-25 22:10:01,931 [INFO] Online model update complete and model saved.
+2025-03-25 22:10:01,932 [INFO] Online model update complete.
+2025-03-25 22:12:57,873 [INFO] Online model update complete and model saved.
+2025-03-25 22:12:57,873 [INFO] Online model update complete.
+2025-03-25 22:15:56,062 [INFO] Online model update complete and model saved.
+2025-03-25 22:15:56,062 [INFO] Online model update complete.
+2025-03-25 22:19:05,653 [INFO] Online model update complete and model saved.
+2025-03-25 22:19:05,653 [INFO] Online model update complete.
+2025-03-25 22:22:10,114 [INFO] Online model update complete and model saved.
+2025-03-25 22:22:10,114 [INFO] Online model update complete.
+2025-03-25 22:25:22,912 [INFO] Online model update complete and model saved.
+2025-03-25 22:25:22,912 [INFO] Online model update complete.
+2025-03-25 22:28:43,698 [INFO] Online model update complete and model saved.
+2025-03-25 22:28:43,698 [INFO] Online model update complete.
+2025-03-25 22:32:14,803 [INFO] Online model update complete and model saved.
+2025-03-25 22:32:14,804 [INFO] Online model update complete.
+2025-03-25 22:35:48,586 [INFO] Online model update complete and model saved.
+2025-03-25 22:35:48,586 [INFO] Online model update complete.
+2025-03-25 22:39:28,875 [INFO] Online model update complete and model saved.
+2025-03-25 22:39:28,875 [INFO] Online model update complete.
+2025-03-25 22:43:11,399 [INFO] Online model update complete and model saved.
+2025-03-25 22:43:11,400 [INFO] Online model update complete.
+2025-03-25 22:47:14,736 [INFO] Online model update complete and model saved.
+2025-03-25 22:47:14,737 [INFO] Online model update complete.
+2025-03-25 22:51:30,090 [INFO] Online model update complete and model saved.
+2025-03-25 22:51:30,091 [INFO] Online model update complete.
+2025-03-25 22:56:19,178 [INFO] Online model update complete and model saved.
+2025-03-25 22:56:19,178 [INFO] Online model update complete.
+2025-03-25 23:01:31,425 [INFO] Online model update complete and model saved.
+2025-03-25 23:01:31,426 [INFO] Online model update complete.
+2025-03-25 23:06:41,891 [INFO] Online model update complete and model saved.
+2025-03-25 23:06:41,891 [INFO] Online model update complete.
+2025-03-25 23:12:07,023 [INFO] Online model update complete and model saved.
+2025-03-25 23:12:07,024 [INFO] Online model update complete.
+2025-03-25 23:17:01,176 [INFO] Training dataset created with 93467 rows.
+2025-03-25 23:17:01,519 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-25 23:17:01,526 [INFO] Scaler saved as scaler_online.pkl
+2025-03-25 23:17:02,281 [INFO] Best parameters from GridSearchCV: {'alpha': 0.0001, 'penalty': 'elasticnet'}
+2025-03-25 23:17:02,318 [INFO] Initial Model Test Accuracy: 0.97
+2025-03-25 23:17:02,324 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.96      0.95      0.95      5088
+           1       0.98      0.98      0.98     13606
+
+    accuracy                           0.97     18694
+   macro avg       0.97      0.96      0.97     18694
+weighted avg       0.97      0.97      0.97     18694
+
+2025-03-25 23:17:02,325 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-25 23:17:02,328 [INFO] Full retraining complete.
+2025-03-25 23:22:45,434 [INFO] Online model update complete and model saved.
+2025-03-25 23:22:45,435 [INFO] Online model update complete.
+2025-03-25 23:28:37,102 [INFO] Online model update complete and model saved.
+2025-03-25 23:28:37,102 [INFO] Online model update complete.
+2025-03-25 23:34:41,602 [INFO] Online model update complete and model saved.
+2025-03-25 23:34:41,603 [INFO] Online model update complete.
+2025-03-25 23:41:13,351 [INFO] Online model update complete and model saved.
+2025-03-25 23:41:13,351 [INFO] Online model update complete.
+2025-03-25 23:47:11,749 [INFO] Online model update complete and model saved.
+2025-03-25 23:47:11,749 [INFO] Online model update complete.
+2025-03-25 23:53:37,107 [INFO] Online model update complete and model saved.
+2025-03-25 23:53:37,108 [INFO] Online model update complete.
+2025-03-26 00:00:02,873 [INFO] Online model update complete and model saved.
+2025-03-26 00:00:02,874 [INFO] Online model update complete.
+2025-03-26 00:06:45,385 [INFO] Online model update complete and model saved.
+2025-03-26 00:06:45,385 [INFO] Online model update complete.
+2025-03-26 00:13:41,266 [INFO] Online model update complete and model saved.
+2025-03-26 00:13:41,266 [INFO] Online model update complete.
+2025-03-26 00:20:46,658 [INFO] Training dataset created with 121487 rows.
+2025-03-26 00:20:47,113 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-26 00:20:47,120 [INFO] Scaler saved as scaler_online.pkl
+2025-03-26 00:20:48,302 [INFO] Best parameters from GridSearchCV: {'alpha': 0.01, 'penalty': 'l1'}
+2025-03-26 00:20:48,353 [INFO] Initial Model Test Accuracy: 0.97
+2025-03-26 00:20:48,359 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.95      0.96      0.95      6876
+           1       0.98      0.98      0.98     17422
+
+    accuracy                           0.97     24298
+   macro avg       0.97      0.97      0.97     24298
+weighted avg       0.97      0.97      0.97     24298
+
+2025-03-26 00:20:48,360 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-26 00:20:48,364 [INFO] Full retraining complete.
+2025-03-26 00:28:44,646 [INFO] Online model update complete and model saved.
+2025-03-26 00:28:44,646 [INFO] Online model update complete.
+2025-03-26 00:37:22,929 [INFO] Online model update complete and model saved.
+2025-03-26 00:37:22,929 [INFO] Online model update complete.
+2025-03-26 00:45:53,112 [INFO] Online model update complete and model saved.
+2025-03-26 00:45:53,112 [INFO] Online model update complete.
+2025-03-26 00:55:33,411 [INFO] Online model update complete and model saved.
+2025-03-26 00:55:33,411 [INFO] Online model update complete.
+2025-03-26 01:07:07,086 [INFO] Online model update complete and model saved.
+2025-03-26 01:07:07,086 [INFO] Online model update complete.
+2025-03-26 01:18:21,406 [INFO] Online model update complete and model saved.
+2025-03-26 01:18:21,407 [INFO] Online model update complete.
+2025-03-26 01:28:40,311 [INFO] Training dataset created with 150908 rows.
+2025-03-26 01:28:40,865 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-26 01:28:40,874 [INFO] Scaler saved as scaler_online.pkl
+2025-03-26 01:28:41,953 [INFO] Best parameters from GridSearchCV: {'alpha': 0.001, 'penalty': 'elasticnet'}
+2025-03-26 01:28:42,002 [INFO] Initial Model Test Accuracy: 0.98
+2025-03-26 01:28:42,009 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.96      0.95      0.96      8178
+           1       0.98      0.98      0.98     22004
+
+    accuracy                           0.98     30182
+   macro avg       0.97      0.97      0.97     30182
+weighted avg       0.98      0.98      0.98     30182
+
+2025-03-26 01:28:42,011 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-26 01:28:42,017 [INFO] Full retraining complete.
+2025-03-26 01:39:58,880 [INFO] Online model update complete and model saved.
+2025-03-26 01:39:58,880 [INFO] Online model update complete.
+2025-03-26 01:51:53,070 [INFO] Online model update complete and model saved.
+2025-03-26 01:51:53,071 [INFO] Online model update complete.
+2025-03-26 02:05:03,321 [INFO] Online model update complete and model saved.
+2025-03-26 02:05:03,321 [INFO] Online model update complete.
+2025-03-26 02:19:15,088 [INFO] Online model update complete and model saved.
+2025-03-26 02:19:15,088 [INFO] Online model update complete.
+2025-03-26 02:33:57,240 [INFO] Online model update complete and model saved.
+2025-03-26 02:33:57,240 [INFO] Online model update complete.
+2025-03-26 02:49:26,356 [INFO] Training dataset created with 185466 rows.
+2025-03-26 02:49:27,049 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-26 02:49:27,062 [INFO] Scaler saved as scaler_online.pkl
+2025-03-26 02:49:28,549 [INFO] Best parameters from GridSearchCV: {'alpha': 0.001, 'penalty': 'l1'}
+2025-03-26 02:49:28,631 [INFO] Initial Model Test Accuracy: 0.99
+2025-03-26 02:49:28,639 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.96      0.98      0.97      8889
+           1       0.99      0.99      0.99     28205
+
+    accuracy                           0.99     37094
+   macro avg       0.98      0.98      0.98     37094
+weighted avg       0.99      0.99      0.99     37094
+
+2025-03-26 02:49:28,640 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-26 02:49:28,644 [INFO] Full retraining complete.
+2025-03-26 03:06:10,044 [INFO] Online model update complete and model saved.
+2025-03-26 03:06:10,045 [INFO] Online model update complete.
+2025-03-26 03:24:37,769 [INFO] Online model update complete and model saved.
+2025-03-26 03:24:37,770 [INFO] Online model update complete.
+2025-03-26 03:43:46,985 [INFO] Online model update complete and model saved.
+2025-03-26 03:43:46,986 [INFO] Online model update complete.
+2025-03-26 04:03:58,671 [INFO] Training dataset created with 217222 rows.
+2025-03-26 04:03:59,465 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-26 04:03:59,478 [INFO] Scaler saved as scaler_online.pkl
+2025-03-26 04:04:01,274 [INFO] Best parameters from GridSearchCV: {'alpha': 0.001, 'penalty': 'l1'}
+2025-03-26 04:04:01,362 [INFO] Initial Model Test Accuracy: 0.99
+2025-03-26 04:04:01,372 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.95      0.99      0.97      9505
+           1       1.00      0.98      0.99     33940
+
+    accuracy                           0.99     43445
+   macro avg       0.97      0.99      0.98     43445
+weighted avg       0.99      0.99      0.99     43445
+
+2025-03-26 04:04:01,374 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-26 04:04:01,381 [INFO] Full retraining complete.
+2025-03-26 04:26:18,414 [INFO] Online model update complete and model saved.
+2025-03-26 04:26:18,416 [INFO] Online model update complete.
+2025-03-26 04:50:15,354 [INFO] Online model update complete and model saved.
+2025-03-26 04:50:15,355 [INFO] Online model update complete.
+2025-03-26 05:17:30,358 [INFO] Training dataset created with 247577 rows.
+2025-03-26 05:17:31,294 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-26 05:17:31,309 [INFO] Scaler saved as scaler_online.pkl
+2025-03-26 05:17:33,725 [INFO] Best parameters from GridSearchCV: {'alpha': 0.01, 'penalty': 'l1'}
+2025-03-26 05:17:33,818 [INFO] Initial Model Test Accuracy: 0.98
+2025-03-26 05:17:33,827 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.95      0.97      0.96     10182
+           1       0.99      0.99      0.99     39334
+
+    accuracy                           0.98     49516
+   macro avg       0.97      0.98      0.98     49516
+weighted avg       0.98      0.98      0.98     49516
+
+2025-03-26 05:17:33,829 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-26 05:17:33,843 [INFO] Full retraining complete.
+2025-03-26 05:48:00,953 [INFO] Online model update complete and model saved.
+2025-03-26 05:48:00,954 [INFO] Online model update complete.
+2025-03-26 06:20:50,922 [INFO] Online model update complete and model saved.
+2025-03-26 06:20:50,922 [INFO] Online model update complete.
+2025-03-26 06:56:51,523 [INFO] Training dataset created with 289140 rows.
+2025-03-26 06:56:52,604 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-26 06:56:52,623 [INFO] Scaler saved as scaler_online.pkl
+2025-03-26 06:56:57,088 [INFO] Best parameters from GridSearchCV: {'alpha': 0.001, 'penalty': 'l1'}
+2025-03-26 06:56:57,368 [INFO] Initial Model Test Accuracy: 0.99
+2025-03-26 06:56:57,379 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.96      0.98      0.97     11678
+           1       1.00      0.99      0.99     46150
+
+    accuracy                           0.99     57828
+   macro avg       0.98      0.99      0.98     57828
+weighted avg       0.99      0.99      0.99     57828
+
+2025-03-26 06:56:57,380 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-26 06:56:57,393 [INFO] Full retraining complete.
+2025-03-26 07:35:53,615 [INFO] Online model update complete and model saved.
+2025-03-26 07:35:53,616 [INFO] Online model update complete.
+2025-03-26 08:20:17,352 [INFO] Training dataset created with 323231 rows.
+2025-03-26 08:20:18,553 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-26 08:20:18,573 [INFO] Scaler saved as scaler_online.pkl
+2025-03-26 08:20:21,999 [INFO] Best parameters from GridSearchCV: {'alpha': 0.001, 'penalty': 'l1'}
+2025-03-26 08:20:22,254 [INFO] Initial Model Test Accuracy: 0.99
+2025-03-26 08:20:22,265 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.96      0.97      0.97     13738
+           1       0.99      0.99      0.99     50909
+
+    accuracy                           0.99     64647
+   macro avg       0.98      0.98      0.98     64647
+weighted avg       0.99      0.99      0.99     64647
+
+2025-03-26 08:20:22,266 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-26 08:20:22,278 [INFO] Full retraining complete.
+
+2025-03-26 09:01:39,671 [INFO] Online model update complete and model saved.
+2025-03-26 09:01:39,672 [INFO] Online model update complete.
+2025-03-26 09:53:00,588 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 09:53:00,588 [ERROR] No candle data available for training.
+2025-03-26 09:53:00,588 [ERROR] Initial training failed. Exiting.
+2025-03-26 09:53:22,363 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 09:53:22,363 [ERROR] No candle data available for training.
+2025-03-26 09:53:22,363 [ERROR] Initial training failed. Exiting.
+2025-03-26 09:53:52,382 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 09:53:52,382 [ERROR] No candle data available for training.
+2025-03-26 09:53:52,382 [ERROR] Initial training failed. Exiting.
+2025-03-26 09:54:22,348 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 09:54:22,348 [ERROR] No candle data available for training.
+2025-03-26 09:54:22,348 [ERROR] Initial training failed. Exiting.
+2025-03-26 09:54:52,425 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 09:54:52,425 [ERROR] No candle data available for training.
+2025-03-26 09:54:52,425 [ERROR] Initial training failed. Exiting.
+2025-03-26 09:55:22,469 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 09:55:22,469 [ERROR] No candle data available for training.
+2025-03-26 09:55:22,469 [ERROR] Initial training failed. Exiting.
+2025-03-26 09:55:52,478 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 09:55:52,478 [ERROR] No candle data available for training.
+2025-03-26 09:55:52,478 [ERROR] Initial training failed. Exiting.
+2025-03-26 09:56:22,523 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 09:56:22,524 [ERROR] No candle data available for training.
+2025-03-26 09:56:22,524 [ERROR] Initial training failed. Exiting.
+2025-03-26 10:18:09,770 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 10:18:09,770 [ERROR] No candle data available for training.
+2025-03-26 10:18:09,770 [ERROR] Initial training failed. Exiting.
+2025-03-26 10:18:38,768 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 10:18:38,768 [ERROR] No candle data available for training.
+2025-03-26 10:18:38,768 [ERROR] Initial training failed. Exiting.
+2025-03-26 10:19:08,770 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 10:19:08,771 [ERROR] No candle data available for training.
+2025-03-26 10:19:08,771 [ERROR] Initial training failed. Exiting.
+2025-03-26 10:19:38,829 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 10:19:38,829 [ERROR] No candle data available for training.
+2025-03-26 10:19:38,829 [ERROR] Initial training failed. Exiting.
+2025-03-26 10:20:08,827 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 10:20:08,827 [ERROR] No candle data available for training.
+2025-03-26 10:20:08,827 [ERROR] Initial training failed. Exiting.
+2025-03-26 10:20:38,839 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 10:20:38,839 [ERROR] No candle data available for training.
+2025-03-26 10:20:38,839 [ERROR] Initial training failed. Exiting.
+2025-03-26 10:43:51,901 [ERROR] Error loading extras CSV: [Errno 2] No such file or directory: 'vib_extra_data.csv'
+2025-03-26 10:43:51,901 [ERROR] No candle data available for training.
+2025-03-26 10:43:51,901 [ERROR] Initial training failed. Exiting.
+2025-03-26 10:44:21,996 [ERROR] Error loading trades CSV: [Errno 2] No such file or directory: 'vib_trades_log.csv'
+2025-03-26 10:44:21,996 [ERROR] Error loading orderbook CSV: [Errno 2] No such file or directory: 'orderbook_data.csv'
+2025-03-26 10:44:22,115 [INFO] Training dataset created with 401 rows.
+2025-03-26 10:44:22,117 [INFO] Merged training data saved to merged_training_data.csv
+2025-03-26 10:44:22,118 [INFO] Scaler saved as scaler_online.pkl
+2025-03-26 10:44:22,173 [INFO] Best parameters from GridSearchCV: {'alpha': 0.001, 'penalty': 'l1'}
+2025-03-26 10:44:22,175 [INFO] Initial Model Test Accuracy: 0.86
+2025-03-26 10:44:22,177 [INFO] Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.85      0.92      0.88        25
+           0       0.86      0.95      0.90        39
+           1       0.91      0.59      0.71        17
+
+    accuracy                           0.86        81
+   macro avg       0.87      0.82      0.83        81
+weighted avg       0.87      0.86      0.86        81
+
+2025-03-26 10:44:22,178 [INFO] Initial model saved as model_online_enhanced.pkl
+2025-03-26 10:44:22,182 [ERROR] Error loading trades CSV: [Errno 2] No such file or directory: 'vib_trades_log.csv'
+2025-03-26 10:44:22,183 [ERROR] Error loading orderbook CSV: [Errno 2] No such file or directory: 'orderbook_data.csv'
+2025-03-26 10:44:22,299 [INFO] Online model update complete and model saved.
+2025-03-26 10:44:22,299 [INFO] Online model update complete.
+2025-03-26 10:44:52,329 [ERROR] Error loading trades CSV: [Errno 2] No such file or directory: 'vib_trades_log.csv'
+2025-03-26 10:44:52,329 [ERROR] Error loading orderbook CSV: [Errno 2] No such file or directory: 'orderbook_data.csv'
+2025-03-26 10:44:52,471 [INFO] Online model update complete and model saved.
+2025-03-26 10:44:52,471 [INFO] Online model update complete.
+2025-03-26 10:45:22,512 [ERROR] Error loading trades CSV: [Errno 2] No such file or directory: 'vib_trades_log.csv'
+2025-03-26 10:45:22,512 [ERROR] Error loading orderbook CSV: [Errno 2] No such file or directory: 'orderbook_data.csv'
+2025-03-26 10:45:22,770 [INFO] Online model update complete and model saved.
+2025-03-26 10:45:22,770 [INFO] Online model update complete.
+2025-03-26 10:45:52,799 [ERROR] Error loading trades CSV: [Errno 2] No such file or directory: 'vib_trades_log.csv'
+2025-03-26 10:45:52,800 [ERROR] Error loading orderbook CSV: [Errno 2] No such file or directory: 'orderbook_data.csv'
+2025-03-26 10:45:53,048 [INFO] Online model update complete and model saved.
+2025-03-26 10:45:53,048 [INFO] Online model update complete.
