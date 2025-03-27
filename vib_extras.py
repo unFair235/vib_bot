@@ -135,30 +135,30 @@ def compute_indicators(df):
 # Main Function
 # ----------------------------
 def main():
-    all_data = []
-    for symbol in SYMBOLS:
-        logger.info(f"Fetching klines for {symbol}...")
-        df = fetch_klines(symbol, KLINE_INTERVAL, limit=KLINE_LIMIT)
-        if df.empty:
-            logger.warning(f"No data fetched for {symbol}.")
-            continue
-        df = compute_indicators(df)
-        all_data.append(df)
-        time.sleep(0.2)  # Delay to avoid hitting API rate limits
+    while True:
+        all_data = []
+        for symbol in SYMBOLS:
+            logger.info(f"Fetching klines for {symbol}...")
+            df = fetch_klines(symbol, KLINE_INTERVAL, limit=KLINE_LIMIT)
+            if df.empty:
+                logger.warning(f"No data fetched for {symbol}.")
+                continue
+            df = compute_indicators(df)
+            all_data.append(df)
+            time.sleep(0.2)  # to avoid API rate limits
 
-    if not all_data:
-        logger.error("No data fetched for any symbol.")
-        return
+        if not all_data:
+            logger.error("No data fetched for any symbol.")
+        else:
+            df_all = pd.concat(all_data, ignore_index=True)
+            df_all.sort_values(by=["symbol", "close_time"], inplace=True)
+            logger.info(f"Fetched and computed indicators for {len(df_all)} rows across all symbols.")
 
-    # Concatenate data for all symbols
-    df_all = pd.concat(all_data, ignore_index=True)
-    # Sort data by symbol and close_time
-    df_all.sort_values(by=["symbol", "close_time"], inplace=True)
-    logger.info(f"Fetched and computed indicators for {len(df_all)} rows across all symbols.")
+            store_extra_data(df_all)
+            logger.info("Extra data stored in the SQLite database.")
 
-    # Instead of writing to CSV, store the combined DataFrame into SQLite
-    store_extra_data(df_all)
-    logger.info("Extra data stored in the SQLite database.")
+        # Wait before the next update cycle (e.g., 60 seconds)
+        time.sleep(60)
 
 if __name__ == "__main__":
     main()

@@ -3,40 +3,43 @@ import subprocess
 import time
 import logging
 import os
+from logging.handlers import RotatingFileHandler
 
 # Define the base directory for your project
 BASE_DIR = "/Users/igorbulgakov/Documents/vib_bot"
 
-# Dictionary of script names and their absolute paths
+# Setup logging for the master process with log rotation
+MASTER_LOG_FILE = os.path.join(BASE_DIR, "master.log")
+logger = logging.getLogger("master")
+logger.setLevel(logging.INFO)
+rot_handler = RotatingFileHandler(MASTER_LOG_FILE, maxBytes=5*1024*1024, backupCount=3)
+formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
+rot_handler.setFormatter(formatter)
+logger.addHandler(rot_handler)
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+logger.info("[MASTER] Starting master.py – Debug log enabled")
+print("[MASTER] Starting master.py – Debug log enabled")
+
+# Dictionary of script names and their absolute paths (including vib_extras)
 SCRIPTS = {
+    "vib_extras": os.path.join(BASE_DIR, "vib_extras.py"),
     "vib_alert": os.path.join(BASE_DIR, "vib_alert.py"),
     "vib_master": os.path.join(BASE_DIR, "vib_master.py"),
     "train_model_online_enhanced": os.path.join(BASE_DIR, "train_model_online_enhanced.py"),
-    # Optionally, if you want to run multi_socket.py, add it here:
     # "multi_socket": os.path.join(BASE_DIR, "multi_socket.py"),
 }
 
 # Corresponding log file paths for each script
 LOG_FILES = {
+    "vib_extras": os.path.join(BASE_DIR, "vib_extras.log"),
     "vib_alert": os.path.join(BASE_DIR, "vib_alert.log"),
     "vib_master": os.path.join(BASE_DIR, "vib_master.log"),
     "train_model_online_enhanced": os.path.join(BASE_DIR, "train_model_online_enhanced.log"),
     # "multi_socket": os.path.join(BASE_DIR, "multi_socket.log"),
 }
-
-# Master log file for this master script
-MASTER_LOG_FILE = os.path.join(BASE_DIR, "master.log")
-
-# Setup logging for the master process
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler(MASTER_LOG_FILE, mode='a'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger("master")
 
 # Dictionary to keep track of subprocesses and their log file objects
 processes = {}
@@ -44,13 +47,12 @@ processes = {}
 def start_script(name, script_path, log_path):
     """Starts a script as a subprocess with unbuffered output and logs its output."""
     logger.info(f"[MASTER] Starting {name}: {script_path}")
-    # Open the log file in line-buffered mode
     log_file = open(log_path, "a", buffering=1)
     proc = subprocess.Popen(
         ["/usr/bin/python3", "-u", script_path],
         stdout=log_file,
         stderr=log_file,
-        cwd=BASE_DIR  # Set working directory to the project directory
+        cwd=BASE_DIR
     )
     processes[name] = (proc, log_file)
 
@@ -66,11 +68,6 @@ def monitor_processes():
         time.sleep(30)
 
 if __name__ == "__main__":
-    logger.info("[MASTER] master.py script STARTED")
-    
-    # Launch all the required scripts
     for name, script_path in SCRIPTS.items():
         start_script(name, script_path, LOG_FILES[name])
-    
-    # Begin monitoring all launched scripts
     monitor_processes()

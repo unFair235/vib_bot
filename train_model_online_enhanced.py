@@ -1,37 +1,24 @@
 #!/usr/bin/env python3
 import pandas as pd
 import numpy as np
-import logging
+import joblib
 from datetime import datetime, timedelta
 import time
 import os
-import joblib
-from sklearn.linear_model import SGDClassifier
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.metrics import accuracy_score, classification_report
-from sklearn.preprocessing import StandardScaler
+import logging
 import sqlite3
-import requests
+import json
 
 # ----------------------------
 # Configuration & File Paths
 # ----------------------------
 BASE_DIR = "/Users/igorbulgakov/Documents/vib_bot"
+MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
+MASTER_DB_FILE = os.path.join(BASE_DIR, "vib_master.db")
+EXTRAS_DB_FILE = os.path.join(BASE_DIR, "vib_extra_data.db")
 
-TRADES_FILE = os.path.join(BASE_DIR, "vib_trades_log.csv")
-# Use dayfirst=True since dates are in the format "25/03/2025 02:30"
-EXTRAS_FILE = os.path.join(BASE_DIR, "vib_extra_data.csv")
-ORDERBOOK_FILE = os.path.join(BASE_DIR, "orderbook_data.csv")
-
-MODEL_PATH = os.path.join(BASE_DIR, "model_online_enhanced.pkl")
-SCALER_PATH = os.path.join(BASE_DIR, "scaler_online.pkl")
-
-# Database file for storing merged training data and feedback
-DB_FILE = os.path.join(BASE_DIR, "training_data.db")
-
-# Telegram configuration (if used in other parts of the pipeline)
-TELEGRAM_TOKEN = "7636229600:AAESoUoIB6nIcUHxme43x8byKhX1sok5zPk"
-CHAT_ID = 531265494
+# Feedback window in seconds
+FEEDBACK_WINDOW = 3600
 
 # ----------------------------
 # Logging Setup
@@ -41,219 +28,133 @@ logging.basicConfig(level=logging.INFO,
                     handlers=[logging.StreamHandler()])
 logger = logging.getLogger(__name__)
 
-# Constants for training
-BIG_TRADE_THRESHOLD = 100000
-LOOKAHEAD_SECONDS = 3600  # 1 hour lookahead
-FEEDBACK_WINDOW = 3600    # Feedback window (1 hour)
-
 # ----------------------------
-# Database Initialization for Training Data
+# DB Functions for Pending Feedback
 # ----------------------------
-def init_training_db():
-    conn = sqlite3.connect(DB_FILE)
-    cur = conn.cursor()
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS merged_training_data (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            timestamp TEXT,
-            rsi REAL,
-            macd_hist REAL,
-            vib_close REAL,
-            volume REAL,
-            big_trades_count INTEGER,
-            orderbook_spread REAL,
-            diff_BTC REAL,
-            diff_ETH REAL,
-            diff_RNDR REAL,
-            label INTEGER
-        );
-    """)
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS feedback (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            timestamp TEXT,
-            predicted_label INTEGER,
-            true_label INTEGER
-        );
-    """)
-    conn.commit()
-    conn.close()
-    logger.info("Training database initialized (merged_training_data and feedback tables ensured).")
+def load_pending_feedback():
+    try:
+        conn = sqlite3.connect(MASTER_DB_FILE)
+        df = pd.read_sql_query("SELECT * FROM pending_feedback", conn, parse_dates=["timestamp"])
+        conn.close()
+        return df
+    except Exception as e:
+        logger.error(f"Error loading pending feedback: {e}")
+        return pd.DataFrame()
 
-init_training_db()
-
-def store_training_data(df_train):
-    """Store the merged training DataFrame into the merged_training_data table."""
-    conn = sqlite3.connect(DB_FILE)
-    df_train["timestamp"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    cols = ["timestamp", "rsi", "macd_hist", "vib_close", "volume", 
-            "big_trades_count", "orderbook_spread", "diff_BTC", "diff_ETH", "diff_RNDR", "label"]
-    df_train = df_train[cols]
-    df_train.to_sql("merged_training_data", conn, if_exists="append", index=False)
-    conn.close()
-    logger.info(f"Merged training data stored in database with {len(df_train)} rows.")
-
-def store_prediction(timestamp, predicted_label):
-    """Store a prediction into the merged_training_data table using the 'label' column."""
-    conn = sqlite3.connect(DB_FILE)
-    cur = conn.cursor()
-    cur.execute("INSERT INTO merged_training_data (timestamp, label) VALUES (?, ?)", 
-                (timestamp, predicted_label))
-    conn.commit()
-    conn.close()
+def delete_pending_feedback(record_id):
+    try:
+        conn = sqlite3.connect(MASTER_DB_FILE)
+        cur = conn.cursor()
+        cur.execute("DELETE FROM pending_feedback WHERE id = ?", (record_id,))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error deleting pending feedback record {record_id}: {e}")
 
 def store_feedback(timestamp, predicted_label, true_label):
-    """Store feedback in the feedback table."""
-    conn = sqlite3.connect(DB_FILE)
-    cur = conn.cursor()
-    cur.execute("INSERT INTO feedback (timestamp, predicted_label, true_label) VALUES (?, ?, ?)",
-                (timestamp, predicted_label, true_label))
-    conn.commit()
-    conn.close()
+    try:
+        conn = sqlite3.connect(MASTER_DB_FILE)
+        cur = conn.cursor()
+        cur.execute("INSERT INTO feedback (timestamp, predicted_label, true_label) VALUES (?, ?, ?)",
+                    (timestamp, predicted_label, true_label))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error storing feedback: {e}")
 
 # ----------------------------
-# Data Loading & Merging Functions
+# Utility to Get Latest VIB Price from Extras DB
 # ----------------------------
-def load_data():
+def get_latest_vib_price():
     try:
-        # Use dayfirst=True to correctly parse dates in the format "dd/mm/yyyy hh:mm"
-        df_extras = pd.read_csv(EXTRAS_FILE, parse_dates=["open_time", "close_time"], dayfirst=True)
-        logger.info(f"Loaded extras data: {len(df_extras)} rows.")
+        conn = sqlite3.connect(EXTRAS_DB_FILE)
+        df = pd.read_sql_query("SELECT * FROM vib_extra_data WHERE symbol='VIBUSDT' ORDER BY close_time DESC LIMIT 1", conn, parse_dates=["close_time"])
+        conn.close()
+        if not df.empty:
+            return df.iloc[0]["close"]
     except Exception as e:
-        logger.error(f"Error loading extras CSV: {e}")
-        df_extras = pd.DataFrame()
-    try:
-        df_trades = pd.read_csv(TRADES_FILE, parse_dates=["LocalTime", "TradeTime"])
-        logger.info(f"Loaded trades data: {len(df_trades)} rows.")
-    except Exception as e:
-        logger.error(f"Error loading trades CSV: {e}")
-        df_trades = pd.DataFrame()
-    try:
-        df_orderbook = pd.read_csv(ORDERBOOK_FILE)
-        df_orderbook["timestamp"] = pd.to_datetime(df_orderbook["timestamp"], format="%Y-%m-%d %H:%M:%S")
-        logger.info(f"Loaded orderbook data: {len(df_orderbook)} rows.")
-    except Exception as e:
-        logger.error(f"Error loading orderbook CSV: {e}")
-        df_orderbook = pd.DataFrame()
-    df_extras.sort_values("open_time", inplace=True)
-    return df_extras, df_trades, df_orderbook
-
-def merge_data(df_extras, df_trades, df_orderbook):
-    """
-    Filters for VIBUSDT data, merges it with other symbols, and creates a feature vector.
-    Returns: (features (np.array), latest_vib_close, latest_timestamp)
-    """
-    df_vib = df_extras[df_extras["symbol"] == "VIBUSDT"].copy()
-    if df_vib.empty:
-        logger.error("No VIBUSDT data found.")
-        return None
-    df_vib.sort_values("close_time", inplace=True)
-    latest_candle = df_vib.iloc[-1]
-    
-    big_trades_count = len(df_trades[
-        (df_trades["TradeTime"] >= latest_candle["close_time"] - timedelta(minutes=5)) &
-        (df_trades["Quantity"] >= BIG_TRADE_THRESHOLD)
-    ])
-    if not df_orderbook.empty:
-        valid_snapshots = df_orderbook[df_orderbook["timestamp"] <= latest_candle["close_time"]]
-        orderbook_spread = valid_snapshots.iloc[-1]["spread"] if not valid_snapshots.empty else 0.0
-    else:
-        orderbook_spread = 0.0
-
-    features = [
-        latest_candle.get("rsi", 0),
-        latest_candle.get("macd_hist", 0),
-        latest_candle.get("close", 0),
-        latest_candle.get("volume", 0),
-        big_trades_count,
-        orderbook_spread,
-        0, 0, 0  # Placeholders for diff_BTC, diff_ETH, diff_RNDR
-    ]
-    return np.array([features]), latest_candle["close"], latest_candle["close_time"]
+        logger.error(f"Error fetching latest VIB price: {e}")
+    return None
 
 # ----------------------------
-# ML Feedback & Inference Functions
+# Training Update Loop
 # ----------------------------
-def label_candle(pct_change):
-    if pct_change >= 0.10:
-        return 3
-    elif pct_change >= 0.05:
-        return 2
-    elif pct_change >= 0.01:
-        return 1
-    elif pct_change > -0.01:
-        return 0
-    elif pct_change > -0.05:
-        return -1
-    elif pct_change > -0.10:
-        return -2
-    else:
-        return -3
-
-pending_predictions = []
-
-def process_feedback(current_vib_close, current_timestamp, model):
-    global pending_predictions
-    remaining_predictions = []
-    for pred in pending_predictions:
-        if (current_timestamp - pred["timestamp"]).total_seconds() >= FEEDBACK_WINDOW:
-            try:
-                pct_change = (current_vib_close - pred["vib_close"]) / pred["vib_close"]
-            except Exception:
-                pct_change = 0.0
-            true_label = label_candle(pct_change)
-            model.partial_fit(pred["features"], [true_label])
-            store_feedback(pred["timestamp"].strftime("%Y-%m-%d %H:%M:%S"),
-                           pred["predicted_label"], true_label)
-            logger.info(f"[Feedback] Updated model with true label: {true_label}")
-        else:
-            remaining_predictions.append(pred)
-    pending_predictions = remaining_predictions
-
-def send_telegram_alert(message):
-    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    data = {"chat_id": CHAT_ID, "text": message}
-    try:
-        resp = requests.post(url, data=data, timeout=5)
-        if resp.status_code != 200:
-            logger.error(f"Telegram Error: {resp.text}")
-    except Exception as e:
-        logger.error(f"Telegram Exception: {e}")
-
-def run_ml_inference(model):
-    global pending_predictions
-    df_extras, df_trades, df_orderbook = load_data()
-    merged_result = merge_data(df_extras, df_trades, df_orderbook)
-    if merged_result is None:
-        logger.warning("[ML] Merge returned None. Skipping inference.")
-        return
-    X, current_vib_close, current_timestamp = merged_result
-    process_feedback(current_vib_close, current_timestamp, model)
-    try:
-        prediction = model.predict(X)[0]
-    except Exception as e:
-        logger.error(f"[ML] Error during prediction: {e}")
-        return
-    store_prediction(current_timestamp.strftime("%Y-%m-%d %H:%M:%S"), prediction)
-    logger.info(f"[ML] Prediction: {prediction}")
-    pending_predictions.append({
-        "timestamp": current_timestamp,
-        "features": X,
-        "vib_close": current_vib_close,
-        "predicted_label": prediction
-    })
-    if prediction != 0:
-        send_telegram_alert(f"Signal: {prediction}\nFeatures: {X[0].tolist()}")
-
-def main_loop():
+def update_model():
     if not os.path.exists(MODEL_PATH):
-        logger.error(f"Model not found at {MODEL_PATH}. Please train and save your model first.")
+        logger.error(f"Model not found at {MODEL_PATH}.")
         return
     model = joblib.load(MODEL_PATH)
-    logger.info("Model loaded successfully.")
+    logger.info("Model loaded for training update.")
+    
+    df_pending = load_pending_feedback()
+    if df_pending.empty:
+        logger.info("No pending feedback records to process.")
+        return
+    
+    current_time = datetime.now()
+    latest_vib_price = get_latest_vib_price()
+    if latest_vib_price is None:
+        logger.error("Could not retrieve latest VIB price; aborting update.")
+        return
+    
+    updated = False
+    for idx, row in df_pending.iterrows():
+        record_time = row["timestamp"]
+        elapsed = (current_time - record_time).total_seconds()
+        if elapsed < FEEDBACK_WINDOW:
+            continue  # Skip if feedback window not reached
+        try:
+            # Retrieve stored features from JSON
+            features = np.array([json.loads(row["features"])])
+            # Assume the stored 'vib_price' was the prediction price; true feedback is based on the latest VIB price.
+            # Compute percent change from the stored prediction price to the current price.
+            # Note: This is a proxy for actual feedback.
+            # In a live system, you might compute this differently.
+            # For now:
+            # true_label = label based on (latest_vib_price - predicted_vib_price) / predicted_vib_price
+            predicted_vib_price = features[0][2]  # Assuming the 3rd feature is the VIB close price at prediction time.
+            pct_change = (latest_vib_price - predicted_vib_price) / predicted_vib_price if predicted_vib_price else 0.0
+            # Determine true label using same logic as in your label_candle function:
+            if pct_change >= 0.10:
+                true_label = 3
+            elif pct_change >= 0.05:
+                true_label = 2
+            elif pct_change >= 0.01:
+                true_label = 1
+            elif pct_change > -0.01:
+                true_label = 0
+            elif pct_change > -0.05:
+                true_label = -1
+            elif pct_change > -0.10:
+                true_label = -2
+            else:
+                true_label = -3
+            predicted_label = row["predicted_label"]
+            logger.info(f"Record {row['id']}: Elapsed {elapsed:.2f}s, Predicted {predicted_label}, True {true_label}")
+            # Update model with partial_fit
+            model.partial_fit(features, [true_label])
+            # Store feedback in DB
+            store_feedback(record_time.strftime("%Y-%m-%d %H:%M:%S"), predicted_label, true_label)
+            # Delete processed pending feedback
+            delete_pending_feedback(row["id"])
+            updated = True
+        except Exception as e:
+            logger.error(f"Error processing pending feedback record {row['id']}: {e}")
+    
+    if updated:
+        try:
+            joblib.dump(model, MODEL_PATH)
+            logger.info("Model updated and saved to disk.")
+        except Exception as e:
+            logger.error(f"Error saving updated model: {e}")
+    else:
+        logger.info("No pending feedback records met the criteria for update.")
+
+def main_loop():
     while True:
-        run_ml_inference(model)
-        time.sleep(30)
+        update_model()
+        # Run update periodically, e.g., every 10 minutes
+        time.sleep(600)
 
 if __name__ == "__main__":
     main_loop()

@@ -8,33 +8,15 @@ import requests
 import logging
 import sqlite3
 
-# ========================
-# CONFIG SECTION
-# ========================
-
-# Define the base directory for your project
 BASE_DIR = "/Users/igorbulgakov/Documents/vib_bot"
-
-# Binance WebSocket URL for VIB/USDT trades
 SOCKET_URL = "wss://stream.binance.com:9443/ws/vibusdt@trade"
-
-# SQLite database file for storing trades
 DB_FILE = os.path.join(BASE_DIR, "trades.db")
-
-# Telegram Bot Config
 TELEGRAM_TOKEN = "7636229600:AAESoUoIB6nIcUHxme43x8byKhX1sok5zPk"
 CHAT_ID = 531265494
-
-# Minimum VIB quantity for big trade alerts
 BIG_TRADE_THRESHOLD = 100000
-
-# For exponential backoff on reconnects
 reconnect_delay = 5
-max_delay = 300  # 5 minutes
+max_delay = 300
 
-# ========================
-# Logging Setup
-# ========================
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -42,12 +24,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger("vib_alert")
 
-# ========================
-# Database Initialization & Functions
-# ========================
-
 def init_db():
-    """Initialize the SQLite database for trades and create the trades table if it doesn't exist."""
+    """Initialize the SQLite database for trades."""
     conn = sqlite3.connect(DB_FILE)
     cur = conn.cursor()
     cur.execute("""
@@ -83,12 +61,22 @@ def insert_trade(local_time, trade_id, side, price, quantity, buyer_order_id, se
     finally:
         conn.close()
 
-# Initialize the database (create table if not exists)
 init_db()
 
-# ========================
-# WebSocket Callbacks
-# ========================
+def send_telegram_alert(message, retries=3):
+    """Send Telegram alert with retry mechanism."""
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    data = {"chat_id": CHAT_ID, "text": message}
+    for attempt in range(retries):
+        try:
+            resp = requests.post(url, data=data, timeout=5)
+            if resp.status_code == 200:
+                return
+            else:
+                logger.error(f"Telegram Error: {resp.text}")
+        except Exception as e:
+            logger.error(f"Telegram Exception on attempt {attempt+1}: {e}")
+        time.sleep(2)
 
 def on_message(ws, message):
     try:
@@ -96,8 +84,6 @@ def on_message(ws, message):
     except Exception as e:
         logger.error(f"Error parsing JSON: {e}")
         return
-
-    # Extract fields
     trade_id = data.get("t")
     try:
         price = float(data.get("p"))
@@ -107,24 +93,17 @@ def on_message(ws, message):
         return
     buyer_order_id = data.get("b")
     seller_order_id = data.get("a")
-    trade_time_ms = data.get("T")   # in ms
+    trade_time_ms = data.get("T")
     is_buyer_maker = data.get("m")
-
-    # Convert times
     local_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
         trade_time_str = datetime.fromtimestamp(trade_time_ms / 1000).strftime("%Y-%m-%d %H:%M:%S")
     except Exception as e:
         logger.error(f"Error converting trade time: {e}")
         trade_time_str = "N/A"
-
     side = "BUY" if not is_buyer_maker else "SELL"
     logger.info(f"Trade - ID: {trade_id} | Side: {side} | Price: {price} | Qty: {qty}")
-
-    # Insert trade into SQLite database
     insert_trade(local_time_str, trade_id, side, price, qty, buyer_order_id, seller_order_id, trade_time_str)
-
-    # Check for big trades and send Telegram alert if needed
     if qty >= BIG_TRADE_THRESHOLD:
         total_value = price * qty
         alert_text = (
@@ -166,10 +145,6 @@ def run_websocket():
         on_close=on_close
     )
     ws.run_forever(ping_interval=20, ping_timeout=10)
-
-# ========================
-# Main Loop
-# ========================
 
 if __name__ == "__main__":
     while True:

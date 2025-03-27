@@ -7,21 +7,9 @@ import os
 import sqlite3
 import logging
 
-# ----------------------------
-# Configuration & File Paths
-# ----------------------------
-
 BASE_DIR = "/Users/igorbulgakov/Documents/vib_bot"
-
-# Binance WebSocket URL for VIB/USDT order book data (top 5 levels)
 ORDER_BOOK_URL = "wss://stream.binance.com:9443/ws/vibusdt@depth5"
-
-# SQLite database file for storing order book snapshots
 DB_FILE = os.path.join(BASE_DIR, "orderbook.db")
-
-# ----------------------------
-# Logging Setup
-# ----------------------------
 
 logging.basicConfig(
     level=logging.INFO,
@@ -30,11 +18,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger("vib_orderbook")
 
-# ----------------------------
-# Database Initialization
-# ----------------------------
 def init_db():
-    """Initialize the SQLite database and create the orderbook_data table if it doesn't exist."""
+    """Initialize the SQLite database for orderbook snapshots."""
     conn = sqlite3.connect(DB_FILE)
     cur = conn.cursor()
     cur.execute("""
@@ -52,9 +37,6 @@ def init_db():
 
 init_db()
 
-# ----------------------------
-# Database Insertion Function
-# ----------------------------
 def insert_orderbook(best_bid, best_ask, spread):
     """Insert an orderbook snapshot into the database."""
     try:
@@ -71,23 +53,17 @@ def insert_orderbook(best_bid, best_ask, spread):
     finally:
         conn.close()
 
-# ----------------------------
-# WebSocket Callback Functions
-# ----------------------------
 def on_message(ws, message):
     try:
         data = json.loads(message)
     except Exception as e:
         logger.error(f"Error parsing JSON: {e}")
         return
-
     bids = data.get('bids', [])
     asks = data.get('asks', [])
     logger.info(f"Received orderbook snapshot: {len(bids)} bids, {len(asks)} asks")
-    
     if bids and asks:
         try:
-            # Get best bid and best ask (round to 4 decimal places)
             best_bid = round(float(bids[0][0]), 4)
             best_ask = round(float(asks[0][0]), 4)
             spread = best_ask - best_bid
@@ -107,9 +83,6 @@ def on_close(ws, close_status_code, close_msg):
 def on_open(ws):
     logger.info("Orderbook WebSocket connected. Listening for updates...")
 
-# ----------------------------
-# WebSocket Runner
-# ----------------------------
 def run_orderbook():
     ws = websocket.WebSocketApp(
         ORDER_BOOK_URL,
@@ -118,12 +91,8 @@ def run_orderbook():
         on_error=on_error,
         on_close=on_close
     )
-    # Keep the connection alive with ping/pong
     ws.run_forever(ping_interval=20, ping_timeout=10)
 
-# ----------------------------
-# Main Loop
-# ----------------------------
 if __name__ == "__main__":
     while True:
         try:
