@@ -21203,3 +21203,195 @@ AttributeError: 'RandomForestClassifier' object has no attribute 'partial_fit'
 2025-03-27 09:03:53,890 [INFO] Loaded orderbook data: 12 rows.
 2025-03-27 09:03:53,900 [INFO] [ML] Prediction: 1
 2025-03-27 09:03:53,900 [INFO] [ML] Prediction: 1
+2025-03-27 09:04:25,321 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:04:25,321 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:04:25,341 [INFO] Loaded trades data: 4940 rows.
+2025-03-27 09:04:25,341 [INFO] Loaded trades data: 4940 rows.
+2025-03-27 09:04:25,342 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:04:25,342 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:04:25,356 [INFO] [ML] Prediction: 1
+2025-03-27 09:04:25,356 [INFO] [ML] Prediction: 1
+2025-03-27 09:04:56,741 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:04:56,741 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:04:56,761 [INFO] Loaded trades data: 4950 rows.
+2025-03-27 09:04:56,761 [INFO] Loaded trades data: 4950 rows.
+2025-03-27 09:04:56,763 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:04:56,763 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:04:56,781 [INFO] [ML] Prediction: 1
+2025-03-27 09:04:56,781 [INFO] [ML] Prediction: 1
+2025-03-27 09:05:28,184 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:05:28,184 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:05:28,205 [INFO] Loaded trades data: 4968 rows.
+2025-03-27 09:05:28,205 [INFO] Loaded trades data: 4968 rows.
+2025-03-27 09:05:28,207 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:05:28,207 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:05:28,220 [INFO] [ML] Prediction: 1
+2025-03-27 09:05:28,220 [INFO] [ML] Prediction: 1
+2025-03-27 09:05:59,094 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:05:59,094 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:05:59,104 [INFO] Loaded trades data: 4969 rows.
+2025-03-27 09:05:59,104 [INFO] Loaded trades data: 4969 rows.
+2025-03-27 09:05:59,105 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:05:59,105 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:05:59,119 [INFO] [ML] Prediction: 1
+2025-03-27 09:05:59,119 [INFO] [ML] Prediction: 1
+2025-03-27 09:06:30,329 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:06:30,329 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:06:30,347 [INFO] Loaded trades data: 4973 rows.
+2025-03-27 09:06:30,347 [INFO] Loaded trades data: 4973 rows.
+2025-03-27 09:06:30,348 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:06:30,348 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:06:30,364 [INFO] [ML] Prediction: 1
+2025-03-27 09:06:30,364 [INFO] [ML] Prediction: 1
+2025-03-27 09:07:01,671 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:07:01,671 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:07:01,692 [INFO] Loaded trades data: 4978 rows.
+2025-03-27 09:07:01,692 [INFO] Loaded trades data: 4978 rows.
+2025-03-27 09:07:01,693 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:07:01,693 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:07:01,708 [INFO] [ML] Prediction: 1
+2025-03-27 09:07:01,708 [INFO] [ML] Prediction: 1
+2025-03-27 09:07:32,999 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:07:32,999 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:07:33,020 [INFO] Loaded trades data: 4982 rows.
+2025-03-27 09:07:33,020 [INFO] Loaded trades data: 4982 rows.
+2025-03-27 09:07:33,022 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:07:33,022 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:07:33,037 [INFO] [ML] Prediction: 1
+2025-03-27 09:07:33,037 [INFO] [ML] Prediction: 1
+2025-03-27 09:08:04,238 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:08:04,238 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:08:04,260 [INFO] Loaded trades data: 4989 rows.
+2025-03-27 09:08:04,260 [INFO] Loaded trades data: 4989 rows.
+2025-03-27 09:08:04,262 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:08:04,262 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:08:04,277 [INFO] [ML] Prediction: 1
+2025-03-27 09:08:04,277 [INFO] [ML] Prediction: 1
+2025-03-27 09:08:35,590 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:08:35,590 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:08:35,613 [INFO] Loaded trades data: 4990 rows.
+2025-03-27 09:08:35,613 [INFO] Loaded trades data: 4990 rows.
+2025-03-27 09:08:35,615 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:08:35,615 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:08:35,630 [INFO] [ML] Prediction: 1
+2025-03-27 09:08:35,630 [INFO] [ML] Prediction: 1
+2025-03-27 09:09:06,893 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:09:06,893 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:09:06,915 [INFO] Loaded trades data: 4995 rows.
+2025-03-27 09:09:06,915 [INFO] Loaded trades data: 4995 rows.
+2025-03-27 09:09:06,917 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:09:06,917 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:09:06,932 [INFO] [ML] Prediction: 1
+2025-03-27 09:09:06,932 [INFO] [ML] Prediction: 1
+2025-03-27 09:09:38,343 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:09:38,343 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:09:38,365 [INFO] Loaded trades data: 5019 rows.
+2025-03-27 09:09:38,365 [INFO] Loaded trades data: 5019 rows.
+2025-03-27 09:09:38,367 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:09:38,367 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:09:38,381 [INFO] [ML] Prediction: 1
+2025-03-27 09:09:38,381 [INFO] [ML] Prediction: 1
+2025-03-27 09:10:09,574 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:10:09,574 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:10:09,596 [INFO] Loaded trades data: 5022 rows.
+2025-03-27 09:10:09,596 [INFO] Loaded trades data: 5022 rows.
+2025-03-27 09:10:09,598 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:10:09,598 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:10:09,612 [INFO] [ML] Prediction: 1
+2025-03-27 09:10:09,612 [INFO] [ML] Prediction: 1
+2025-03-27 09:10:40,915 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:10:40,915 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:10:40,962 [INFO] Loaded trades data: 5024 rows.
+2025-03-27 09:10:40,962 [INFO] Loaded trades data: 5024 rows.
+2025-03-27 09:10:40,963 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:10:40,963 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:10:40,973 [INFO] [ML] Prediction: 1
+2025-03-27 09:10:40,973 [INFO] [ML] Prediction: 1
+2025-03-27 09:11:12,166 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:11:12,166 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:11:12,187 [INFO] Loaded trades data: 5028 rows.
+2025-03-27 09:11:12,187 [INFO] Loaded trades data: 5028 rows.
+2025-03-27 09:11:12,188 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:11:12,188 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:11:12,203 [INFO] [ML] Prediction: 1
+2025-03-27 09:11:12,203 [INFO] [ML] Prediction: 1
+2025-03-27 09:11:43,690 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:11:43,690 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:11:43,706 [INFO] Loaded trades data: 5035 rows.
+2025-03-27 09:11:43,706 [INFO] Loaded trades data: 5035 rows.
+2025-03-27 09:11:43,707 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:11:43,707 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:11:43,719 [INFO] [ML] Prediction: 1
+2025-03-27 09:11:43,719 [INFO] [ML] Prediction: 1
+2025-03-27 09:12:15,001 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:12:15,001 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:12:15,021 [INFO] Loaded trades data: 5038 rows.
+2025-03-27 09:12:15,021 [INFO] Loaded trades data: 5038 rows.
+2025-03-27 09:12:15,022 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:12:15,022 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:12:15,033 [INFO] [ML] Prediction: 1
+2025-03-27 09:12:15,033 [INFO] [ML] Prediction: 1
+2025-03-27 09:12:46,267 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:12:46,267 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:12:46,287 [INFO] Loaded trades data: 5040 rows.
+2025-03-27 09:12:46,287 [INFO] Loaded trades data: 5040 rows.
+2025-03-27 09:12:46,289 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:12:46,289 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:12:46,303 [INFO] [ML] Prediction: 1
+2025-03-27 09:12:46,303 [INFO] [ML] Prediction: 1
+2025-03-27 09:13:17,582 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:13:17,582 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:13:17,605 [INFO] Loaded trades data: 5042 rows.
+2025-03-27 09:13:17,605 [INFO] Loaded trades data: 5042 rows.
+2025-03-27 09:13:17,607 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:13:17,607 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:13:17,622 [INFO] [ML] Prediction: 1
+2025-03-27 09:13:17,622 [INFO] [ML] Prediction: 1
+2025-03-27 09:13:48,795 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:13:48,795 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:13:48,818 [INFO] Loaded trades data: 5043 rows.
+2025-03-27 09:13:48,818 [INFO] Loaded trades data: 5043 rows.
+2025-03-27 09:13:48,820 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:13:48,820 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:13:48,836 [INFO] [ML] Prediction: 1
+2025-03-27 09:13:48,836 [INFO] [ML] Prediction: 1
+2025-03-27 09:14:29,859 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:14:29,859 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:14:29,882 [INFO] Loaded trades data: 5043 rows.
+2025-03-27 09:14:29,882 [INFO] Loaded trades data: 5043 rows.
+2025-03-27 09:14:29,884 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:14:29,884 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:14:29,898 [INFO] [ML] Prediction: 1
+2025-03-27 09:14:29,898 [INFO] [ML] Prediction: 1
+2025-03-27 09:20:32,393 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:20:32,393 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:20:32,406 [INFO] Loaded trades data: 5045 rows.
+2025-03-27 09:20:32,406 [INFO] Loaded trades data: 5045 rows.
+2025-03-27 09:20:32,407 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:20:32,407 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:20:32,418 [INFO] [ML] Prediction: 1
+2025-03-27 09:20:32,418 [INFO] [ML] Prediction: 1
+2025-03-27 09:21:03,617 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:21:03,617 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:21:03,630 [INFO] Loaded trades data: 5046 rows.
+2025-03-27 09:21:03,630 [INFO] Loaded trades data: 5046 rows.
+2025-03-27 09:21:03,631 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:21:03,631 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:21:03,639 [INFO] [ML] Prediction: 1
+2025-03-27 09:21:03,639 [INFO] [ML] Prediction: 1
+2025-03-27 09:21:35,861 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:21:35,861 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:21:35,876 [INFO] Loaded trades data: 5049 rows.
+2025-03-27 09:21:35,876 [INFO] Loaded trades data: 5049 rows.
+2025-03-27 09:21:35,877 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:21:35,877 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:21:35,890 [INFO] [ML] Prediction: 1
+2025-03-27 09:21:35,890 [INFO] [ML] Prediction: 1
+2025-03-27 09:22:07,089 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:22:07,089 [INFO] Loaded extras data: 2000 rows.
+2025-03-27 09:22:07,111 [INFO] Loaded trades data: 5055 rows.
+2025-03-27 09:22:07,111 [INFO] Loaded trades data: 5055 rows.
+2025-03-27 09:22:07,113 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:22:07,113 [INFO] Loaded orderbook data: 12 rows.
+2025-03-27 09:22:07,127 [INFO] [ML] Prediction: 1
+2025-03-27 09:22:07,127 [INFO] [ML] Prediction: 1

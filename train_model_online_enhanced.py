@@ -8,6 +8,7 @@ import os
 import logging
 import sqlite3
 import json
+from sklearn.metrics import accuracy_score, classification_report
 
 # ----------------------------
 # Configuration & File Paths
@@ -77,6 +78,31 @@ def get_latest_vib_price():
     return None
 
 # ----------------------------
+# Evaluation Function
+# ----------------------------
+def evaluate_model_performance():
+    """
+    Evaluate model performance using feedback records from the master DB.
+    Logs accuracy and a full classification report.
+    """
+    try:
+        conn = sqlite3.connect(MASTER_DB_FILE)
+        df_feedback = pd.read_sql_query("SELECT * FROM feedback", conn, parse_dates=["timestamp"])
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error loading feedback data for evaluation: {e}")
+        return
+
+    if 'true_label' in df_feedback.columns and 'predicted_label' in df_feedback.columns and not df_feedback.empty:
+        acc = accuracy_score(df_feedback['true_label'], df_feedback['predicted_label'])
+        report = classification_report(df_feedback['true_label'], df_feedback['predicted_label'])
+        logger.info("Post-Update Model Evaluation:")
+        logger.info(f"Accuracy: {acc:.4f}")
+        logger.info(f"\n{report}")
+    else:
+        logger.error("Feedback data is missing required columns or is empty.")
+
+# ----------------------------
 # Training Update Loop
 # ----------------------------
 def update_model():
@@ -106,15 +132,10 @@ def update_model():
         try:
             # Retrieve stored features from JSON
             features = np.array([json.loads(row["features"])])
-            # Assume the stored 'vib_price' was the prediction price; true feedback is based on the latest VIB price.
-            # Compute percent change from the stored prediction price to the current price.
-            # Note: This is a proxy for actual feedback.
-            # In a live system, you might compute this differently.
-            # For now:
-            # true_label = label based on (latest_vib_price - predicted_vib_price) / predicted_vib_price
+            # Assume the stored VIB price (3rd feature) was the prediction price; true feedback is based on the latest VIB price.
             predicted_vib_price = features[0][2]  # Assuming the 3rd feature is the VIB close price at prediction time.
             pct_change = (latest_vib_price - predicted_vib_price) / predicted_vib_price if predicted_vib_price else 0.0
-            # Determine true label using same logic as in your label_candle function:
+            # Determine true label based on percentage change
             if pct_change >= 0.10:
                 true_label = 3
             elif pct_change >= 0.05:
@@ -145,6 +166,8 @@ def update_model():
         try:
             joblib.dump(model, MODEL_PATH)
             logger.info("Model updated and saved to disk.")
+            # Evaluate the model performance after update
+            evaluate_model_performance()
         except Exception as e:
             logger.error(f"Error saving updated model: {e}")
     else:

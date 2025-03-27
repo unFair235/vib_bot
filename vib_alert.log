@@ -5502,3 +5502,137 @@
 2025-03-27 09:03:38,741 [INFO] Connection Opened... Listening for Big Trades 🧐
 2025-03-27 09:04:04,905 [INFO] Trade - ID: 19215424 | Side: BUY | Price: 0.04311 | Qty: 141.0
 2025-03-27 09:04:18,957 [INFO] Trade - ID: 19215425 | Side: SELL | Price: 0.04306 | Qty: 205.0
+2025-03-27 09:04:29,883 [INFO] Trade - ID: 19215426 | Side: SELL | Price: 0.04306 | Qty: 144.0
+2025-03-27 09:04:29,891 [INFO] Trade - ID: 19215427 | Side: SELL | Price: 0.04306 | Qty: 644.0
+2025-03-27 09:04:30,333 [INFO] Trade - ID: 19215428 | Side: SELL | Price: 0.04305 | Qty: 144.0
+2025-03-27 09:04:30,905 [INFO] Trade - ID: 19215429 | Side: SELL | Price: 0.04305 | Qty: 464.0
+2025-03-27 09:04:41,463 [INFO] Trade - ID: 19215430 | Side: SELL | Price: 0.04304 | Qty: 137.0
+2025-03-27 09:04:42,138 [INFO] Trade - ID: 19215431 | Side: SELL | Price: 0.04304 | Qty: 862.0
+2025-03-27 09:04:42,236 [INFO] Trade - ID: 19215432 | Side: SELL | Price: 0.04303 | Qty: 973.0
+2025-03-27 09:04:42,241 [INFO] Trade - ID: 19215433 | Side: SELL | Price: 0.04303 | Qty: 1161.0
+2025-03-27 09:04:53,454 [INFO] Trade - ID: 19215434 | Side: BUY | Price: 0.04306 | Qty: 948.0
+2025-03-27 09:04:55,889 [INFO] Trade - ID: 19215435 | Side: SELL | Price: 0.04303 | Qty: 214.0
+2025-03-27 09:05:00,498 [INFO] Trade - ID: 19215436 | Side: SELL | Price: 0.04303 | Qty: 601.0
+2025-03-27 09:05:00,504 [INFO] Trade - ID: 19215437 | Side: SELL | Price: 0.04303 | Qty: 1082.0
+2025-03-27 09:05:00,580 [INFO] Trade - ID: 19215438 | Side: SELL | Price: 0.04303 | Qty: 504.0
+2025-03-27 09:05:00,586 [INFO] Trade - ID: 19215439 | Side: SELL | Price: 0.04303 | Qty: 1009.0
+2025-03-27 09:05:00,670 [INFO] Trade - ID: 19215440 | Side: SELL | Price: 0.04303 | Qty: 88.0
+2025-03-27 09:05:00,674 [INFO] Trade - ID: 19215441 | Side: SELL | Price: 0.04303 | Qty: 618.0
+2025-03-27 09:05:01,724 [INFO] Trade - ID: 19215442 | Side: SELL | Price: 0.04303 | Qty: 942.0
+2025-03-27 09:05:02,447 [INFO] Trade - ID: 19215443 | Side: SELL | Price: 0.04303 | Qty: 417.0
+2025-03-27 09:05:02,453 [INFO] Trade - ID: 19215444 | Side: SELL | Price: 0.04303 | Qty: 1031.0
+2025-03-27 09:05:02,455 [INFO] Trade - ID: 19215445 | Side: SELL | Price: 0.04303 | Qty: 1221.0
+2025-03-27 09:05:02,457 [INFO] Trade - ID: 19215446 | Side: SELL | Price: 0.04303 | Qty: 545.0
+2025-03-27 09:05:02,459 [INFO] Trade - ID: 19215447 | Side: SELL | Price: 0.04302 | Qty: 1977.0
+2025-03-27 09:05:02,462 [INFO] Trade - ID: 19215448 | Side: SELL | Price: 0.04302 | Qty: 909.0
+2025-03-27 09:05:09,718 [INFO] Trade - ID: 19215449 | Side: BUY | Price: 0.04304 | Qty: 671.0
+2025-03-27 09:05:09,724 [INFO] Trade - ID: 19215450 | Side: BUY | Price: 0.04304 | Qty: 501.0
+2025-03-27 09:05:09,727 [INFO] Trade - ID: 19215451 | Side: BUY | Price: 0.04304 | Qty: 1177.0
+2025-03-27 09:05:09,730 [INFO] Trade - ID: 19215452 | Side: BUY | Price: 0.04304 | Qty: 144.0
+2025-03-27 09:05:09,733 [INFO] Trade - ID: 19215453 | Side: BUY | Price: 0.04305 | Qty: 144.0
+2025-03-27 09:05:32,055 [INFO] Trade - ID: 19215454 | Side: SELL | Price: 0.04302 | Qty: 265.0
+2025-03-27 09:06:07,468 [INFO] Trade - ID: 19215455 | Side: SELL | Price: 0.04302 | Qty: 214.0
+2025-03-27 09:06:09,311 [INFO] Trade - ID: 19215456 | Side: SELL | Price: 0.04302 | Qty: 174.0
+2025-03-27 09:06:12,284 [INFO] Trade - ID: 19215457 | Side: BUY | Price: 0.04305 | Qty: 116.0
+2025-03-27 09:06:24,263 [INFO] Trade - ID: 19215458 | Side: SELL | Price: 0.04302 | Qty: 149.0
+2025-03-27 09:06:40,239 [INFO] Trade - ID: 19215459 | Side: SELL | Price: 0.04302 | Qty: 268.0
+2025-03-27 09:06:40,243 [INFO] Trade - ID: 19215460 | Side: SELL | Price: 0.04302 | Qty: 399.0
+2025-03-27 09:06:46,175 [INFO] Trade - ID: 19215461 | Side: BUY | Price: 0.04304 | Qty: 547.0
+2025-03-27 09:06:46,182 [INFO] Trade - ID: 19215462 | Side: BUY | Price: 0.04304 | Qty: 593.0
+2025-03-27 09:06:46,623 [INFO] Trade - ID: 19215463 | Side: BUY | Price: 0.04304 | Qty: 561.0
+2025-03-27 09:07:27,551 [INFO] Trade - ID: 19215464 | Side: BUY | Price: 0.04304 | Qty: 357.0
+2025-03-27 09:07:27,560 [INFO] Trade - ID: 19215465 | Side: BUY | Price: 0.04304 | Qty: 497.0
+2025-03-27 09:07:27,564 [INFO] Trade - ID: 19215466 | Side: BUY | Price: 0.04304 | Qty: 323.0
+2025-03-27 09:07:28,163 [INFO] Trade - ID: 19215467 | Side: BUY | Price: 0.04307 | Qty: 217.0
+2025-03-27 09:07:39,005 [INFO] Trade - ID: 19215468 | Side: SELL | Price: 0.04305 | Qty: 236.0
+2025-03-27 09:07:41,925 [INFO] Trade - ID: 19215469 | Side: SELL | Price: 0.04305 | Qty: 443.0
+2025-03-27 09:07:48,327 [INFO] Trade - ID: 19215470 | Side: SELL | Price: 0.04304 | Qty: 780.0
+2025-03-27 09:07:48,333 [INFO] Trade - ID: 19215471 | Side: SELL | Price: 0.04303 | Qty: 780.0
+2025-03-27 09:07:48,337 [INFO] Trade - ID: 19215472 | Side: SELL | Price: 0.04302 | Qty: 375.0
+2025-03-27 09:07:48,340 [INFO] Trade - ID: 19215473 | Side: SELL | Price: 0.04302 | Qty: 406.0
+2025-03-27 09:07:53,625 [INFO] Trade - ID: 19215474 | Side: SELL | Price: 0.04302 | Qty: 636.0
+2025-03-27 09:08:11,368 [INFO] Trade - ID: 19215475 | Side: SELL | Price: 0.04302 | Qty: 243.0
+2025-03-27 09:08:37,683 [INFO] Trade - ID: 19215476 | Side: BUY | Price: 0.04307 | Qty: 330.0
+2025-03-27 09:08:50,589 [INFO] Trade - ID: 19215477 | Side: SELL | Price: 0.04303 | Qty: 548.0
+2025-03-27 09:08:50,593 [INFO] Trade - ID: 19215478 | Side: SELL | Price: 0.04303 | Qty: 102.0
+2025-03-27 09:09:02,669 [INFO] Trade - ID: 19215479 | Side: SELL | Price: 0.04302 | Qty: 310.0
+2025-03-27 09:09:02,677 [INFO] Trade - ID: 19215480 | Side: SELL | Price: 0.04302 | Qty: 15.0
+2025-03-27 09:09:35,104 [INFO] Trade - ID: 19215481 | Side: SELL | Price: 0.04302 | Qty: 222.0
+2025-03-27 09:09:35,133 [INFO] Trade - ID: 19215482 | Side: SELL | Price: 0.04302 | Qty: 1740.0
+2025-03-27 09:09:35,137 [INFO] Trade - ID: 19215483 | Side: SELL | Price: 0.04302 | Qty: 1586.0
+2025-03-27 09:09:35,144 [INFO] Trade - ID: 19215484 | Side: SELL | Price: 0.04302 | Qty: 1586.0
+2025-03-27 09:09:35,147 [INFO] Trade - ID: 19215485 | Side: SELL | Price: 0.04302 | Qty: 596.0
+2025-03-27 09:09:35,151 [INFO] Trade - ID: 19215486 | Side: SELL | Price: 0.04302 | Qty: 1592.0
+2025-03-27 09:09:35,154 [INFO] Trade - ID: 19215487 | Side: SELL | Price: 0.04302 | Qty: 1113.0
+2025-03-27 09:09:35,157 [INFO] Trade - ID: 19215488 | Side: SELL | Price: 0.04302 | Qty: 2003.0
+2025-03-27 09:09:35,159 [INFO] Trade - ID: 19215489 | Side: SELL | Price: 0.04302 | Qty: 1215.0
+2025-03-27 09:09:35,160 [INFO] Trade - ID: 19215490 | Side: SELL | Price: 0.04302 | Qty: 1977.0
+2025-03-27 09:09:35,161 [INFO] Trade - ID: 19215491 | Side: SELL | Price: 0.04302 | Qty: 994.0
+2025-03-27 09:09:35,163 [INFO] Trade - ID: 19215492 | Side: SELL | Price: 0.04302 | Qty: 1591.0
+2025-03-27 09:09:35,164 [INFO] Trade - ID: 19215493 | Side: SELL | Price: 0.04302 | Qty: 581.0
+2025-03-27 09:09:35,165 [INFO] Trade - ID: 19215494 | Side: SELL | Price: 0.04302 | Qty: 1424.0
+2025-03-27 09:09:35,167 [INFO] Trade - ID: 19215495 | Side: SELL | Price: 0.04302 | Qty: 110.0
+2025-03-27 09:09:35,168 [INFO] Trade - ID: 19215496 | Side: SELL | Price: 0.04302 | Qty: 578.0
+2025-03-27 09:09:35,169 [INFO] Trade - ID: 19215497 | Side: SELL | Price: 0.04302 | Qty: 546.0
+2025-03-27 09:09:35,170 [INFO] Trade - ID: 19215498 | Side: SELL | Price: 0.04302 | Qty: 579.0
+2025-03-27 09:09:35,171 [INFO] Trade - ID: 19215499 | Side: SELL | Price: 0.04302 | Qty: 574.0
+2025-03-27 09:09:35,172 [INFO] Trade - ID: 19215500 | Side: SELL | Price: 0.043 | Qty: 579.0
+2025-03-27 09:09:35,173 [INFO] Trade - ID: 19215501 | Side: SELL | Price: 0.043 | Qty: 596.0
+2025-03-27 09:09:35,174 [INFO] Trade - ID: 19215502 | Side: SELL | Price: 0.043 | Qty: 580.0
+2025-03-27 09:09:35,174 [INFO] Trade - ID: 19215503 | Side: SELL | Price: 0.043 | Qty: 879.0
+2025-03-27 09:09:35,175 [INFO] Trade - ID: 19215504 | Side: SELL | Price: 0.043 | Qty: 168.0
+2025-03-27 09:10:02,880 [INFO] Trade - ID: 19215505 | Side: SELL | Price: 0.04296 | Qty: 134.0
+2025-03-27 09:10:02,885 [INFO] Trade - ID: 19215506 | Side: SELL | Price: 0.04295 | Qty: 1076.0
+2025-03-27 09:10:02,888 [INFO] Trade - ID: 19215507 | Side: SELL | Price: 0.04293 | Qty: 2441.0
+2025-03-27 09:10:19,062 [INFO] Trade - ID: 19215508 | Side: SELL | Price: 0.04294 | Qty: 376.0
+2025-03-27 09:10:19,344 [INFO] Trade - ID: 19215509 | Side: SELL | Price: 0.04293 | Qty: 349.0
+2025-03-27 09:10:59,403 [INFO] Trade - ID: 19215510 | Side: BUY | Price: 0.04296 | Qty: 979.0
+2025-03-27 09:10:59,411 [INFO] Trade - ID: 19215511 | Side: BUY | Price: 0.04296 | Qty: 184.0
+2025-03-27 09:10:59,414 [INFO] Trade - ID: 19215512 | Side: BUY | Price: 0.04296 | Qty: 1172.0
+2025-03-27 09:11:11,721 [INFO] Trade - ID: 19215513 | Side: BUY | Price: 0.04299 | Qty: 138.0
+2025-03-27 09:11:17,966 [INFO] Trade - ID: 19215514 | Side: SELL | Price: 0.04295 | Qty: 605.0
+2025-03-27 09:11:17,972 [INFO] Trade - ID: 19215515 | Side: SELL | Price: 0.04294 | Qty: 605.0
+2025-03-27 09:11:17,975 [INFO] Trade - ID: 19215516 | Side: SELL | Price: 0.04294 | Qty: 11.0
+2025-03-27 09:11:25,722 [INFO] Trade - ID: 19215517 | Side: SELL | Price: 0.04294 | Qty: 129.0
+2025-03-27 09:11:41,733 [INFO] Trade - ID: 19215518 | Side: SELL | Price: 0.04294 | Qty: 128.0
+2025-03-27 09:11:41,770 [INFO] Trade - ID: 19215519 | Side: BUY | Price: 0.04299 | Qty: 519.0
+2025-03-27 09:11:41,773 [INFO] Trade - ID: 19215520 | Side: BUY | Price: 0.043 | Qty: 657.0
+2025-03-27 09:11:49,377 [INFO] Trade - ID: 19215521 | Side: SELL | Price: 0.04296 | Qty: 326.0
+2025-03-27 09:11:57,611 [INFO] Trade - ID: 19215522 | Side: BUY | Price: 0.04299 | Qty: 382.0
+2025-03-27 09:12:12,289 [INFO] Trade - ID: 19215523 | Side: SELL | Price: 0.04296 | Qty: 656.0
+2025-03-27 09:12:21,863 [INFO] Trade - ID: 19215524 | Side: BUY | Price: 0.043 | Qty: 213.0
+2025-03-27 09:12:21,870 [INFO] Trade - ID: 19215525 | Side: BUY | Price: 0.043 | Qty: 221.0
+2025-03-27 09:12:54,402 [INFO] Trade - ID: 19215526 | Side: SELL | Price: 0.04295 | Qty: 759.0
+2025-03-27 09:12:54,412 [INFO] Trade - ID: 19215527 | Side: SELL | Price: 0.04294 | Qty: 338.0
+2025-03-27 09:13:19,782 [INFO] Trade - ID: 19215528 | Side: BUY | Price: 0.043 | Qty: 134.0
+2025-03-27 09:13:58,997 [ERROR] WebSocket Error: [Errno 54] Connection reset by peer
+2025-03-27 09:13:58,997 [ERROR] [Errno 54] Connection reset by peer - goodbye
+2025-03-27 09:13:58,998 [WARNING] WebSocket Closed.
+2025-03-27 09:13:58,998 [WARNING] Reconnecting in 5 seconds...
+2025-03-27 09:14:05,847 [INFO] Websocket connected
+2025-03-27 09:14:05,848 [INFO] Connection Opened... Listening for Big Trades 🧐
+2025-03-27 09:20:16,885 [ERROR] WebSocket Error: [Errno 54] Connection reset by peer
+2025-03-27 09:20:16,885 [ERROR] [Errno 54] Connection reset by peer - goodbye
+2025-03-27 09:20:16,885 [WARNING] WebSocket Closed.
+2025-03-27 09:20:16,885 [WARNING] Reconnecting in 5 seconds...
+2025-03-27 09:20:22,351 [INFO] Websocket connected
+2025-03-27 09:20:22,351 [INFO] Connection Opened... Listening for Big Trades 🧐
+2025-03-27 09:20:25,958 [INFO] Trade - ID: 19215593 | Side: BUY | Price: 0.04304 | Qty: 272.0
+2025-03-27 09:20:25,962 [INFO] Trade - ID: 19215594 | Side: BUY | Price: 0.04304 | Qty: 8.0
+2025-03-27 09:20:58,285 [INFO] Trade - ID: 19215595 | Side: BUY | Price: 0.04304 | Qty: 120.0
+2025-03-27 09:21:18,390 [INFO] Trade - ID: 19215596 | Side: SELL | Price: 0.04299 | Qty: 193.0
+2025-03-27 09:21:29,108 [INFO] Trade - ID: 19215597 | Side: SELL | Price: 0.04299 | Qty: 131.0
+2025-03-27 09:21:33,817 [INFO] Trade - ID: 19215598 | Side: BUY | Price: 0.04304 | Qty: 234.0
+2025-03-27 09:21:38,343 [INFO] Trade - ID: 19215599 | Side: SELL | Price: 0.04299 | Qty: 397.0
+2025-03-27 09:21:38,489 [INFO] Trade - ID: 19215600 | Side: SELL | Price: 0.04299 | Qty: 289.0
+2025-03-27 09:21:38,708 [INFO] Trade - ID: 19215601 | Side: SELL | Price: 0.04299 | Qty: 118.0
+2025-03-27 09:21:38,710 [INFO] Trade - ID: 19215602 | Side: SELL | Price: 0.04299 | Qty: 38.0
+2025-03-27 09:21:46,939 [INFO] Trade - ID: 19215603 | Side: BUY | Price: 0.04304 | Qty: 466.0
+2025-03-27 09:21:54,547 [INFO] Trade - ID: 19215604 | Side: SELL | Price: 0.04299 | Qty: 1151.0
+2025-03-27 09:22:08,113 [INFO] Trade - ID: 19215605 | Side: SELL | Price: 0.04299 | Qty: 159.0
+2025-03-27 09:22:11,213 [INFO] Trade - ID: 19215606 | Side: BUY | Price: 0.04302 | Qty: 1172.0
+2025-03-27 09:22:11,220 [INFO] Trade - ID: 19215607 | Side: BUY | Price: 0.04302 | Qty: 530.0
+2025-03-27 09:22:24,213 [INFO] Trade - ID: 19215608 | Side: SELL | Price: 0.04299 | Qty: 137.0
+2025-03-27 09:22:24,218 [INFO] Trade - ID: 19215609 | Side: SELL | Price: 0.04298 | Qty: 87.0
+2025-03-27 09:22:24,811 [INFO] Trade - ID: 19215610 | Side: SELL | Price: 0.04298 | Qty: 384.0
+2025-03-27 09:22:24,818 [INFO] Trade - ID: 19215611 | Side: SELL | Price: 0.04295 | Qty: 319.0
