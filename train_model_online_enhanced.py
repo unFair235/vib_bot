@@ -130,10 +130,19 @@ def update_model():
         if elapsed < FEEDBACK_WINDOW:
             continue  # Skip if feedback window not reached
         try:
-            # Retrieve stored features from JSON
-            features = np.array([json.loads(row["features"])])
-            # Assume the stored VIB price (3rd feature) was the prediction price; true feedback is based on the latest VIB price.
-            predicted_vib_price = features[0][2]  # Assuming the 3rd feature is the VIB close price at prediction time.
+            # Retrieve stored features from JSON and convert to numpy array
+            features = np.array(json.loads(row["features"]))
+            # If an extra dimension is present, squeeze it out
+            if features.ndim == 3 and features.shape[1] == 1:
+                features = features.reshape(1, features.shape[2])
+            # Now ensure features have expected shape (1,9)
+            if features.shape != (1, 9):
+                logger.error(f"Pending feedback record {row['id']} has insufficient feature length: {features.shape}")
+                delete_pending_feedback(row["id"])
+                continue
+
+            # Assuming the 3rd feature is the VIB close price at prediction time.
+            predicted_vib_price = features[0][2]
             pct_change = (latest_vib_price - predicted_vib_price) / predicted_vib_price if predicted_vib_price else 0.0
             # Determine true label based on percentage change
             if pct_change >= 0.10:
