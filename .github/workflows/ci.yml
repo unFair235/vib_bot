@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test-and-train:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: snok/install-poetry@v1
+      - run: poetry install --no-interaction
+      - run: poetry run pytest
+      - run: poetry run python train_model_linear.py
