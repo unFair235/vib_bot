@@ -25,10 +25,10 @@ def compute_features_at(
     for a live timestamp `ts`, but using static DataFrames.
     Returns None if data is stale or insufficient.
     """
-    # Data freshness check
+    # Data freshness check (use close_time, not open_time)
     if extras.empty:
         return None
-    age = (ts - extras["open_time"].max()).total_seconds()
+    age = (ts - extras["close_time"].max()).total_seconds()
     if age > cfg.DATA_FRESHNESS_THRESHOLD:
         return None
 
@@ -63,7 +63,7 @@ def compute_features_at(
         if not ob_sym.empty else 0.0
     )
 
-    # Cross‐symbol ratios
+    # Cross‑symbol ratios
     ratios: Dict[str, float] = {}
     for other in cfg.SYMBOLS:
         if other == symbol:
