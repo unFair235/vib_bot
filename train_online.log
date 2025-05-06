@@ -1,0 +1,45 @@
+2025-05-06 16:41:55,438 [INFO] Adding 'symbol' column to pending_feedback
+2025-05-06 16:41:55,438 [ERROR] Schema migration failed: no such table: pending_feedback
+Traceback (most recent call last):
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/models/train_model_online_enhanced.py", line 54, in <module>
+    _ensure_symbol_column()
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/models/train_model_online_enhanced.py", line 48, in _ensure_symbol_column
+    cur.execute(f"ALTER TABLE {table} ADD COLUMN symbol TEXT;")
+sqlite3.OperationalError: no such table: pending_feedback
+2025-05-06 16:41:55,477 [INFO] Loaded linear model + scaler for incremental update.
+2025-05-06 16:41:55,478 [ERROR] Error loading pending feedback: Execution failed on sql 'SELECT id, timestamp, predicted_label, features, model_id, symbol FROM pending_feedback': no such table: pending_feedback
+Traceback (most recent call last):
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/io/sql.py", line 2674, in execute
+    cur.execute(sql, *args)
+sqlite3.OperationalError: no such table: pending_feedback
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/models/train_model_online_enhanced.py", line 67, in load_pending_feedback
+    df = pd.read_sql_query(
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/io/sql.py", line 526, in read_sql_query
+    return pandas_sql.read_query(
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/io/sql.py", line 2738, in read_query
+    cursor = self.execute(sql, params)
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/io/sql.py", line 2686, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql 'SELECT id, timestamp, predicted_label, features, model_id, symbol FROM pending_feedback': no such table: pending_feedback
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/models/train_model_online_enhanced.py", line 232, in <module>
+    main_loop()
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/models/train_model_online_enhanced.py", line 227, in main_loop
+    update_model()
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/models/train_model_online_enhanced.py", line 154, in update_model
+    df_lin     = df_pending[df_pending["model_id"] == "linear"]
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: 'model_id'
+2025-05-06 16:42:25,401 [INFO] Loaded linear model + scaler for incremental update.
+2025-05-06 16:42:25,403 [INFO] No pending feedback for linear model.

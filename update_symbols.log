@@ -1,0 +1,20 @@
+/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+⚠️  Failed to fetch from CMC: CMC_API_KEY not set; cannot fetch updated symbols.
+ℹ️  Falling back to default SYMBOLS from config: ['VIBUSDT', 'BTCUSDT', 'ETHUSDT', 'BNBUSDT']
+📦 Wrote 4 symbols to /Users/igorbulgakov/Documents/bot/symbols.json
+/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+⚠️  Failed to fetch from CMC: CMC_API_KEY not set; cannot fetch updated symbols.
+ℹ️  Falling back to default SYMBOLS from config: ['VIBUSDT', 'BTCUSDT', 'ETHUSDT', 'BNBUSDT']
+📦 Wrote 4 symbols to /Users/igorbulgakov/Documents/bot/symbols.json
+/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+⚠️  Failed to fetch from CMC: CMC_API_KEY not set; cannot fetch updated symbols.
+ℹ️  Falling back to default SYMBOLS from config: ['VIBUSDT', 'BTCUSDT', 'ETHUSDT', 'BNBUSDT']
+📦 Wrote 4 symbols to /Users/igorbulgakov/Documents/bot/symbols.json
+/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+⚠️  Failed to fetch from CMC: CMC_API_KEY not set; cannot fetch updated symbols.
+ℹ️  Falling back to default SYMBOLS from config: ['VIBUSDT', 'BTCUSDT', 'ETHUSDT', 'BNBUSDT']
+📦 Wrote 4 symbols to /Users/igorbulgakov/Documents/bot/symbols.json

@@ -1,0 +1,76 @@
+2025-05-06 16:41:30,908 [INFO] Active model: Linear
+/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2025-05-06 16:41:57,354 [INFO] Active model: Linear
+2025-05-06 16:41:57,354 [INFO] Active model: Linear
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 313, in <module>
+    main_loop()
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 309, in main_loop
+    run_cycle()
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 235, in run_cycle
+    pack = get_features(symbol)
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 192, in get_features
+    spread  = ob[ob.timestamp <= latest.close_time].spread.iloc[-1] if not ob.empty else 0.0
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2025-05-06 16:42:27,412 [INFO] Active model: Linear
+2025-05-06 16:42:27,412 [INFO] Active model: Linear
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 313, in <module>
+    main_loop()
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 309, in main_loop
+    run_cycle()
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 235, in run_cycle
+    pack = get_features(symbol)
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 192, in get_features
+    spread  = ob[ob.timestamp <= latest.close_time].spread.iloc[-1] if not ob.empty else 0.0
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2025-05-06 16:42:57,048 [INFO] Active model: Linear
+2025-05-06 16:42:57,048 [INFO] Active model: Linear
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 313, in <module>
+    main_loop()
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 309, in main_loop
+    run_cycle()
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 235, in run_cycle
+    pack = get_features(symbol)
+  File "/Users/igorbulgakov/Documents/bot/vib_bot/realtime/vib_master.py", line 192, in get_features
+    spread  = ob[ob.timestamp <= latest.close_time].spread.iloc[-1] if not ob.empty else 0.0
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexing.py", line 1191, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexing.py", line 1752, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/pandas/core/indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+/Users/igorbulgakov/Library/Caches/pypoetry/virtualenvs/vib-bot-ma_M4Xid-py3.9/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2025-05-06 16:53:22,563 [INFO] Active model: Linear
