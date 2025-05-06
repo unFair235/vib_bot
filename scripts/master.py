@@ -3,71 +3,108 @@ import subprocess
 import time
 import logging
 import os
+import signal
+import sys
 from logging.handlers import RotatingFileHandler
 
-# Define the base directory for your project
-BASE_DIR = "/Users/igorbulgakov/Documents/vib_bot"
+from vib_bot.config import (
+    BASE_DIR,
+    MODEL_PATH_LINEAR,
+    SCALER_PATH_LINEAR,
+    MODEL_PATH_NN,
+    SCALER_PATH_NN,
+)
 
-# Setup logging for the master process with log rotation
+# ─── Paths for your orchestration scripts ────────────────────────────────────
+UPDATE_SYMBOLS_SCRIPT = os.path.join(BASE_DIR, "scripts", "update_symbols.py")
+GENERATE_SCRIPT       = os.path.join(BASE_DIR, "processing", "generate_training_data.py")
+TRAINER_LINEAR        = os.path.join(BASE_DIR, "models", "train_model_linear.py")
+TRAINER_NN            = os.path.join(BASE_DIR, "models", "train_model_nn.py")
+EVAL_SWITCH_SCRIPT    = os.path.join(BASE_DIR, "models", "evaluate_and_switch.py")
+
+# ─── Logger Setup ────────────────────────────────────────────────────────────
 MASTER_LOG_FILE = os.path.join(BASE_DIR, "master.log")
 logger = logging.getLogger("master")
 logger.setLevel(logging.INFO)
+fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s", datefmt="%Y-%m-%dT%H:%M:%SZ")
+
 rot_handler = RotatingFileHandler(MASTER_LOG_FILE, maxBytes=5*1024*1024, backupCount=3)
-formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
-rot_handler.setFormatter(formatter)
+rot_handler.setFormatter(fmt)
 logger.addHandler(rot_handler)
+
 stream_handler = logging.StreamHandler()
-stream_handler.setFormatter(formatter)
+stream_handler.setFormatter(fmt)
 logger.addHandler(stream_handler)
 
-logger.info("[MASTER] Starting master.py – Debug log enabled")
-print("[MASTER] Starting master.py – Debug log enabled")
+def run_script(path, description):
+    logger.info(f"🔨  {description}…")
+    rc = subprocess.call([sys.executable, path], cwd=BASE_DIR)
+    if rc != 0:
+        logger.error(f"{description} failed (exit code {rc}); aborting master startup.")
+        sys.exit(1)
+    logger.info(f"✅  {description} completed successfully.")
 
-# Dictionary of script names and their absolute paths (including vib_extras)
+# ─── Step 0: Update symbol list ───────────────────────────────────────────────
+run_script(UPDATE_SYMBOLS_SCRIPT, "Updating symbols.json")
+
+# ─── Step 1: Generate merged training data ───────────────────────────────────
+run_script(GENERATE_SCRIPT, "Generating merged_training_data")
+
+# ─── Step 2: Bootstrap linear model if missing ───────────────────────────────
+if not os.path.exists(MODEL_PATH_LINEAR) or not os.path.exists(SCALER_PATH_LINEAR):
+    run_script(TRAINER_LINEAR, "Offline linear trainer")
+
+# ─── Step 3: Bootstrap neural‑net model if missing ────────────────────────────
+if not os.path.exists(MODEL_PATH_NN) or not os.path.exists(SCALER_PATH_NN):
+    run_script(TRAINER_NN, "Offline NN trainer")
+
+# ─── Step 4: Auto‑switch active model ─────────────────────────────────────────
+logger.info("🔄  Evaluating & switching active model if needed…")
+rc = subprocess.call([sys.executable, EVAL_SWITCH_SCRIPT], cwd=BASE_DIR)
+if rc != 0:
+    logger.warning(f"`evaluate_and_switch.py` exited with code {rc}; keeping existing active_model.txt")
+else:
+    logger.info("✅  `evaluate_and_switch.py` ran successfully.")
+
+# ─── Daemons under master ────────────────────────────────────────────────────
 SCRIPTS = {
-    "vib_extras": os.path.join(BASE_DIR, "vib_extras.py"),
-    "vib_alert": os.path.join(BASE_DIR, "vib_alert.py"),
-    "vib_master": os.path.join(BASE_DIR, "vib_master.py"),
-    "train_model_online_enhanced": os.path.join(BASE_DIR, "train_model_online_enhanced.py"),
-    # "multi_socket": os.path.join(BASE_DIR, "multi_socket.py"),
+    "update_symbols":     UPDATE_SYMBOLS_SCRIPT,
+    "vib_extras":         os.path.join(BASE_DIR, "data", "vib_extras.py"),
+    "multi_socket":       os.path.join(BASE_DIR, "realtime", "multi_socket.py"),
+    "vib_master":         os.path.join(BASE_DIR, "realtime", "vib_master.py"),
+    "train_model_online": os.path.join(BASE_DIR, "models", "train_model_online_enhanced.py"),
 }
-
-# Corresponding log file paths for each script
-LOG_FILES = {
-    "vib_extras": os.path.join(BASE_DIR, "vib_extras.log"),
-    "vib_alert": os.path.join(BASE_DIR, "vib_alert.log"),
-    "vib_master": os.path.join(BASE_DIR, "vib_master.log"),
-    "train_model_online_enhanced": os.path.join(BASE_DIR, "train_model_online_enhanced.log"),
-    # "multi_socket": os.path.join(BASE_DIR, "multi_socket.log"),
-}
-
-# Dictionary to keep track of subprocesses and their log file objects
+LOG_FILES = {name: os.path.join(BASE_DIR, f"{name}.log") for name in SCRIPTS}
 processes = {}
 
-def start_script(name, script_path, log_path):
-    """Starts a script as a subprocess with unbuffered output and logs its output."""
-    logger.info(f"[MASTER] Starting {name}: {script_path}")
-    log_file = open(log_path, "a", buffering=1)
-    proc = subprocess.Popen(
-        ["/usr/bin/python3", "-u", script_path],
-        stdout=log_file,
-        stderr=log_file,
-        cwd=BASE_DIR
-    )
-    processes[name] = (proc, log_file)
+def start_script(name, path, log_path):
+    logger.info(f"[MASTER] Starting {name}")
+    f = open(log_path, "a", buffering=1)
+    p = subprocess.Popen([sys.executable, "-u", path], stdout=f, stderr=f, cwd=BASE_DIR)
+    processes[name] = (p, f)
 
-def monitor_processes():
-    """Checks every 30 seconds if any launched process has terminated, and restarts it if needed."""
+def monitor():
     while True:
-        for name, (proc, log_file) in list(processes.items()):
-            ret = proc.poll()
-            if ret is not None:
-                logger.warning(f"[MASTER] {name} terminated (exit code {ret}). Restarting...")
-                log_file.close()
+        for name, (p, f) in list(processes.items()):
+            if p.poll() is not None:
+                logger.warning(f"[MASTER] {name} exited ({p.returncode}); restarting…")
+                f.close()
                 start_script(name, SCRIPTS[name], LOG_FILES[name])
         time.sleep(30)
 
+def shutdown(signum, frame):
+    logger.info("[MASTER] Shutting down, terminating children…")
+    for p, f in processes.values():
+        p.terminate()
+        f.close()
+    sys.exit(0)
+
+# Trap SIGINT/SIGTERM so Ctrl‑C cleans up children
+signal.signal(signal.SIGINT, shutdown)
+signal.signal(signal.SIGTERM, shutdown)
+
 if __name__ == "__main__":
-    for name, script_path in SCRIPTS.items():
-        start_script(name, script_path, LOG_FILES[name])
-    monitor_processes()
+    logger.info("[MASTER] Launching all managed scripts")
+    for name, path in SCRIPTS.items():
+        start_script(name, path, LOG_FILES[name])
+    monitor()
